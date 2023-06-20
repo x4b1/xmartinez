@@ -1,0 +1,32 @@
+---
+type Props = {
+  experience: ExperienceLine[];
+};
+
+type ExperienceLine = {
+  company: string;
+  url: string;
+  title: string;
+  startDate: string;
+  endDate: string;
+  description: string[];
+}
+
+const { experience } = Astro.props;
+
+---
+
+<section>
+  <h2>Work Experience</h2>
+  {
+    experience.map((line) => (
+      <div class="block">
+        <h3><a href={line.url}>{line.company}</a></h3>
+        <h4>{line.title} | {line.startDate} - {line.endDate}</h4>
+        <ul>
+          {line.description.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    ))
+  }
+</section>

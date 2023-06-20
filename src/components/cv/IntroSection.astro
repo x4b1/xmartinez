@@ -1,0 +1,27 @@
+---
+type Props = {
+  name: string;
+  jobDescription: string;
+  location: string;
+  email: string;
+  website: string;
+  about: string[];
+};
+
+const { name, jobDescription, about, location, email, website } = Astro.props;
+---
+
+<section>
+  <div class="flex justify-between sm:items-center sm:flex-row flex-col-reverse">
+  <h1>{name}</h1>
+  <div class="not-prose">
+    <img class="w-16 sm:w-20 mb-2 sm:mb-0 rounded-full" src="avatar.jpg">
+  </div>
+</div>
+
+  <strong>{jobDescription}</strong>
+
+  <p>{location} | <a href=`mailto:${email}`>{email}</a> | <a href={website}>{website}</a></p>
+
+  {about.map((paragraph) => <p>{paragraph}</p>)}
+</section>
