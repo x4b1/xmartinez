@@ -1,0 +1,121 @@
+---
+type Props = {
+  name: string;
+  jobDescription: string;
+  location: string;
+  email: string;
+  website: string;
+  github: string;
+  linkedin: string;
+  education: Education[];
+  languages: string[];
+};
+
+const {
+  name,
+  jobDescription,
+  location,
+  email,
+  website,
+  github,
+  linkedin,
+  education,
+  languages,
+} = Astro.props;
+
+type Education = {
+  title: string;
+  place: string;
+  startDate: string;
+  endDate: string;
+};
+
+type Detail = {
+  key: string;
+  text: string;
+  link?: string;
+};
+
+const details: Detail[] = [
+{
+    key: "Location",
+    text: location,
+  },
+  {
+    key: "Email",
+    text: email,
+    link: `mailto:${email}`,
+  },
+  {
+    key: "Linkedin",
+    text: linkedin,
+    link: linkedin,
+  },
+  {
+    key: "GitHub",
+    text: github,
+    link: github,
+  },
+  {
+    key: "Website",
+    text: website,
+    link: website,
+  },
+];
+---
+
+<section class="flex flex-col h-full p-4 bg-slate-600 text-white">
+  <div class="mb-4 mt-2">
+    <h1 class="text-4xl font-extrabold leading-none tracking-tight md:text-5xl">
+      {name}
+    </h1>
+    <h2 class="text-lg">
+      {jobDescription}
+    </h2>
+  </div>
+
+
+  <dl class="flex flex-col space-y-2 justify-start">
+    {
+      details.map((detail) => (
+        <div class="xs:w-1/2">
+          <dt class="mb-0 text-sm font-semibold">{detail.key}</dt>
+          <dd>
+            {detail.link ? (            <a
+              class="font-normal"
+              target="_blank"
+              href={detail.link}
+              rel="noreferrer"
+            >
+              {detail.text}
+            </a>):
+          (
+            <span>{detail.text}</span>
+          )}
+          </dd>
+        </div>
+      ))
+    }
+  </dl>
+
+  <hr class="h-px my-4 bg-gray-200 border-0" />
+
+  <h2 class="font-extrabold text-lg mb-2">Education</h2>
+  {
+    education.map((ed) => (
+      <>
+        <h3 class="font-bold">{ed.title}</h3>
+        <h4>{ed.place}</h4>
+        <span class="italic text-slate-300">
+          {ed.startDate} - {ed.endDate}
+        </span>
+      </>
+    ))
+  }
+  <hr class="h-px my-4 bg-gray-200 border-0" />
+
+  <h2 class="font-extrabold text-lg mb-2">Languages</h2>
+  <ul class="list-none flex md:flex-col print:flex-col flex-none md:space-y-3 print:space-y-3 list-inside">
+    {languages.map((s) => <li class="w-full">{s}</li>)}
+  </ul>
+</section>

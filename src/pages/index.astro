@@ -1,29 +1,47 @@
 ---
-import MinimalLayout from "../layouts/MinimalLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-import IntroSection from "../components/cv/IntroSection.astro";
+import HeaderSection from "../components/cv/HeaderSection.astro";
 import ExperienceSection from "../components/cv/ExperienceSection.astro";
 import Download from "../components/Download.astro";
 
-import { info } from "../content/cv/en";
+import { info } from "../content/_cv";
 
-function cvFileName(name: string):string {
-  return `${name.toLowerCase().replaceAll(" ", "_")}.pdf`
+function cvFileName(name: string): string {
+  return `${name.toLowerCase().replaceAll(" ", "_")}.pdf`;
 }
-
 ---
 
-<MinimalLayout title={info.name}>
-  <div class="not-prose absolute right-4 top-4">
-    <Download href={cvFileName(info.name)}/>
+<BaseLayout title={info.name}>
+  <div class="print:py-0 bg-indigo-50 print:block flex justify-center items-center">
+    <main class="w-a4 print:h-a4 m-0 shadow-md print:shadow-none text-sm bg-white">
+      <div class="md:absolute fixed right-4 top-6">
+        <Download href={cvFileName(info.name)} />
+      </div>
+      <div class="h-full flex flex-col md:flex-row print:flex-row">
+        <div class="md:w-1/3 print:w-1/3">
+          <HeaderSection
+            education={info.education}
+            website={info.website}
+            email={info.email}
+            github={info.github}
+            jobDescription={info.jobDescription}
+            linkedin={info.linkedin}
+            location={info.location}
+            name={info.name}
+            languages={info.languages}
+          />
+        </div>
+        <div class="md:w-2/3 print:w-2/3 pt-4 px-4 flex flex-col mt-2 space-y-2">
+          <section>
+            {info.about.map((about) => <p class="mb-2">{about}</p>)}
+          </section>
+          <ExperienceSection
+            experience={info.experience}
+            maxExperienceLines={5}
+          />
+        </div>
+      </div>
+    </main>
   </div>
-  <IntroSection
-    name={info.name}
-    jobDescription={info.jobDescription}
-    location={info.location}
-    website={info.website}
-    email={info.email}
-    about={info.about} />
-
-  <ExperienceSection experience={info.experience}/>
-</MinimalLayout>
+</BaseLayout>

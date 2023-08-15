@@ -1,27 +1,29 @@
 export const info = {
-  name: 'Xabier Martinez',
-  jobDescription: "Software developer",
+  name:"Xabier Martinez",
+  jobDescription: "Software Engineer",
   location: "Basque Country, Spain",
   website: "https://xmartinez.dev",
-  email: "hello@xmartinez.dev",
+  email: "xmartinez1702@gmail.com",
+  github: "https://github.com/x4b1",
+  linkedin: "https://www.linkedin.com/in/xmartinez",
   about: [
-    "I'm Xabi, a software engineer with devops mindset, mainly working in the Go programming language. But I don't discard the opportunity to work with other technologies. Big fan of KISS principle and don't reinventing the wheel.",
-    "I'm currently working at Arex Markets as Platform Engineer, building backend services, taking care of the infrastructure, improving developer experience and helping other developers."
+    "Software engineer with devops mindset, mainly working with Go programming language, but doesn't discard the opportunity to work with other technologies. Big fan of KISS principle and don't reinventing the wheel."
   ],
+  languages: ["Spanish", "English", "Basque"],
   experience: [
     {
-      company: "Arex Markets",
-      url: "https://www.arex.io/",
-      title: "Platform Engineer",
+      company: "Bankable (prev. Arex Markets)",
+      url: "https://www.bnkbl.com/",
+      title: "Software Engineer",
       startDate: "Jul 2021",
       endDate: "Present",
       description: [
-        "Build services in GoLang, such as, AuthN/AuthZ, and libraries.",
-        "Help other developers in the day by day.",
+        "Build services in GoLang, such as, AuthN/AuthZ, financial services and libs.",
         "Taking care of the infrastructure, moving forward to IaC and GitOps, Costs reductions.",
-        "Improved CI/CD pipelines, migrate from Jenkins to GH actions.",
-        "Standardize deployment setups, defining widely use pipeline charts, and a base helm Chart for services setup.",
-      ]
+        "Improved CI/CD, migrate from Jenkins to GH actions. Standardize deployment, defining widely use workflows, and base helm Chart.",
+        "Help other developers in the day by day.",
+      ],
+      tags: ["Go", "Node.js", "PostgreSQL", "K8S", "AWS", "GPC", "Helm", "Terraform"]
     },
     {
       company: "Paack",
@@ -34,7 +36,8 @@ export const info = {
         "Internal service communication via gRPC and asynchronously using Pub/Sub.",
         "Integrating with third parties such as Twillio, Google and auth0.",
         "CI/CD using GitHub actions and deploying to kubernetes.",
-      ]
+      ],
+      tags: ["Go", "GCP", "GraphQL", "PostgreSQL", "RabbitMQ"]
     },
     {
       company: "Arex Markets",
@@ -43,10 +46,11 @@ export const info = {
       startDate: "Nov 2018",
       endDate: "Jul 2020",
       description: [
-        "Involved in the definition and implementation of a service (front and back-end) to handle onboarding of the new customers, with different flows and external integrations.",
+        "Definition and implementation of a service (front and back-end) to handle onboarding of the new customers, with different flows and external integrations.",
         "Worked on developments around financial data, such as, invoice importing from third parties or financial transactions management.",
         "Setup deployments, pubsub queues, and other infrastructure stuff.",
-      ]
+      ],
+      tags: ["Go", "Node.js", "TypeScript", "Vue.js", "PostgreSQL", "Docker", "AWS", "GPC"]
     },
     {
       company: "Holaluz",
@@ -58,8 +62,9 @@ export const info = {
         "Created from scratch a new managing tool for sales team.",
         "Build a service to handle automatically rejections from distributors when a customer wants to join.",
         "Move legacy code to a new service cleaning the code and adding tests, also fix many bugs on legacy code.",
-        "Insfraestructure tasks, such as, create an ansible script to automatize the deployment of Nuxt static apps to Amazon S3.  ",
-      ]
+        "Infrastructure tasks, such as, create an ansible script to automatize the deployment of Nuxt static apps to Amazon S3.",
+      ],
+      tags: ["PHP", "Symfony", "Laravel", "Vue.js", "Angular", "PostgreSQL", "MySQL", "AWS"]
     },
     {
       company: "Inbenta",
@@ -68,10 +73,11 @@ export const info = {
       startDate: "Feb 2016",
       endDate: "Feb 2018",
       description: [
-        "Involved in the development of a massive content importer from different sources, such as, Web (crawling), REST APIs, Zendesk, Salesforce, Shopify, Discourse... to automatically import contents to the company platform, allowing the client configure it selfs.",
+        "Involved in the development of a massive content importer from different sources, such as, Web (crawling), REST APIs, Zendesk, Salesforce and other third APIs to import contents to the company platform, allowing the client configure it selfs.",
         "Managed projects related to chat-bots, NLP search and ticketing. Talking with clients to analyse the needs and viability.",
         "Developed functionalities for customer adapting company product to each them.",
-      ]
+      ],
+      tags: ["PHP", "Vue.js", "jQuery", "MySQL"]
     },
     {
       company: "Arin Innovation",
@@ -80,10 +86,18 @@ export const info = {
       startDate: "Feb 2016",
       endDate: "Feb 2018",
       description: [
-        "I did my first internship at Arin Innovation, a consulting services company.",
-        "My daily work was to talk with clients to get the requirements and develop them. There I learned to apply the knowledge learned to develop with Oracles tools, such as JD Edwards and Oracle DB.",
+        "Talk with clients to get the requirements and develop.",
         "First I was contracted for one year, when it finished they proposed me to extend the contract.",
-      ]
+      ],
+      tags: ["Oracle", "Oracle JD Edwards", "Oracle DB", "PS/SQL", "Oracle BI publisher"]
     },
+  ],
+  education: [
+    {
+      title: "Computer Science Engineering",
+      place: "University of the Basque Country",
+      startDate: "Sep 2011",
+      endDate: "Jul 2015",
+    }
   ],
 }

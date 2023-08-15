@@ -1,24 +1,37 @@
+/* latin */
+@font-face {
+  font-family: 'Calibri';
+  font-style: italic;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/l/font?kit=J7adnpV-BGlaFfdAhLQo6btPMDoTpA&skey=36a3d5758e0e2f58&v=v15) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Calibri';
+  font-style: italic;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/l/font?kit=J7aYnpV-BGlaFfdAhLQgUp5aHRgejiMIKQ&skey=8b00183e5f6700b6&v=v15) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Calibri';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/l/font?kit=J7afnpV-BGlaFfdAhLEY67FIEjg&skey=a1029226f80653a8&v=v15) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Calibri';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/l/font?kit=J7aanpV-BGlaFfdAjAo9_pxqHxIZrCE&skey=cd2dd6afe6bf0eb2&v=v15) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 body {
-  font-family: 'Poppins', sans-serif;
-}
-
-::selection {
-  @apply bg-indigo-400 bg-opacity-50 text-white;
-}
-
-
-main.minimalist {
-  @apply prose prose-slate m-0
-    max-w-fit bg-white px-12 py-8 pt-8 prose-h1:text-3xl prose-h1:uppercase prose-h2:mb-3 prose-h2:mt-8 prose-h2:text-sm prose-h2:uppercase
-    prose-h2:text-slate-500 prose-h3:mb-3
-    prose-h3:mt-8 prose-h3:text-xl prose-h3:uppercase prose-h4:mb-3 prose-h4:mt-4 
-    prose-h4:text-sm prose-h4:text-slate-600 prose-p:my-2 prose-p:text-sm
-    prose-p:leading-6 prose-a:font-bold prose-a:no-underline prose-a:transition-colors hover:prose-a:text-slate-400 
-    prose-li:text-sm prose-table:mt-4 prose-thead:border-0 prose-th:p-0
-    prose-th:font-medium prose-td:p-0 prose-td:text-slate-500
-    dark:bg-slate-800
-    dark:prose-invert
-    prose-h4:dark:text-slate-400  
-    sm:px-24 sm:py-14
-    sm:shadow-md lg:max-w-4xl;
+  font-family: "Calibri", sans-serif;
+  font-size: "10pt";
 }
