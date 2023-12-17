@@ -1,0 +1,16 @@
+{
+    "extends": [
+      "config:base",
+      "group:all",
+      ":semanticCommits",
+      ":semanticCommitTypeAll(chore)"
+    ],
+    "packageRules": [
+        {
+            "matchPackagePatterns": ["*"],
+            "automerge": false
+        }
+    ],
+    "reviewers": ["x4b1"],
+    "dependencyDashboard": false
+}
