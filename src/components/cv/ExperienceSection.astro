@@ -1,7 +1,7 @@
 ---
 type Props = {
   experience: ExperienceLine[];
-  maxExperienceLines: number;
+  website: string;
 };
 
 type ExperienceLine = {
@@ -14,19 +14,17 @@ type ExperienceLine = {
   tags: string[];
 };
 
-const { experience, maxExperienceLines } = Astro.props;
+const { experience, website } = Astro.props;
 
-var totalLines: number = 0;
 ---
 
-<section>
+<section class="h-full overflow-hidden flex flex-col gap-y-3 justify-around">
   <h2 class="font-extrabold text-lg">Work Experience</h2>
-  <div class="mt-2">
+  <div class="flex flex-col flex-wrap gap-y-2 overflow-hidden">
     {
       experience.map((line) => {
-        totalLines++;
         return (
-          <div class="mb-4">
+          <div>
             <div class="flex justify-between mb-1">
               <h3 class="w-2/3">
                 <span class="font-bold">{line.title}</span>@
@@ -38,7 +36,6 @@ var totalLines: number = 0;
                 {line.startDate} - {line.endDate}
               </span>
             </div>
-            {totalLines <= maxExperienceLines && (
               <ul class="mb-1">
                 {line.description.map((item) => (
                   <li class="flex space-x-2">
@@ -58,11 +55,13 @@ var totalLines: number = 0;
                   </li>
                 ))}
               </ul>
-            )}
             <div class="text-slate-600">{line.tags.join(" | ")}</div>
           </div>
         );
       })
     }
+  </div>
+  <div class="h-6 hidden print:block font-bold mb-4 text-center">
+    More details at <a class="text-slate-600" href={website}>{website}</a>
   </div>
 </section>
