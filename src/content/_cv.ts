@@ -12,15 +12,28 @@ export const info = {
   languages: ["Spanish", "English", "Basque"],
   experience: [
     {
-      company: "Bankable (prev. Arex Markets)",
+      company: "Bankable",
       url: "https://www.bnkbl.com/",
-      title: "Software Engineer",
-      startDate: "Jul 2021",
+      title: "Tech Lead",
+      startDate: "Oct 2023",
       endDate: "Present",
       description: [
+        "In charge of the enablement team, allowing new companies join to our platform.",
+        "Tasks definitions, helping team to deliver and coordination with product and other teams.",
+        "Getting rid of the legacy code.",
+      ],
+      tags: ["Go", "Node.js", "PostgreSQL", "K8S", "AWS", "GPC", "Helm", "Terraform"]
+    },
+    {
+      company: "Bankable (prev. Arex Markets)",
+      url: "https://www.bnkbl.com/",
+      title: "Platform Engineer",
+      startDate: "Jul 2021",
+      endDate: "Oct 2023",
+      description: [
         "Build services in GoLang, such as, AuthN/AuthZ, financial services and libs.",
-        "Taking care of the infrastructure, moving forward to IaC and GitOps, Costs reductions.",
-        "Improved CI/CD, migrate from Jenkins to GH actions. Standardize deployment, defining widely use workflows, and base helm Chart.",
+        "Moving forward to IaC and GitOps, Costs reductions.",
+        "Improved CI/CD, migrate from Jenkins to GH actions. Standardize deployment, defining widely use workflows and Helm charts.",
         "Help other developers in the day by day.",
       ],
       tags: ["Go", "Node.js", "PostgreSQL", "K8S", "AWS", "GPC", "Helm", "Terraform"]
@@ -62,7 +75,6 @@ export const info = {
         "Created from scratch a new managing tool for sales team.",
         "Build a service to handle automatically rejections from distributors when a customer wants to join.",
         "Move legacy code to a new service cleaning the code and adding tests, also fix many bugs on legacy code.",
-        "Infrastructure tasks, such as, create an ansible script to automatize the deployment of Nuxt static apps to Amazon S3.",
       ],
       tags: ["PHP", "Symfony", "Laravel", "Vue.js", "Angular", "PostgreSQL", "MySQL", "AWS"]
     },

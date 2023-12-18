@@ -32,13 +32,13 @@ function cvFileName(name: string): string {
             languages={info.languages}
           />
         </div>
-        <div class="md:w-2/3 print:w-2/3 pt-4 px-4 flex flex-col mt-2 space-y-2">
+        <div class="md:w-2/3 print:w-2/3 h-full pt-4 px-4 flex flex-col space-y-2">
           <section>
             {info.about.map((about) => <p class="mb-2">{about}</p>)}
           </section>
           <ExperienceSection
             experience={info.experience}
-            maxExperienceLines={5}
+            website={info.website}
           />
         </div>
       </div>
