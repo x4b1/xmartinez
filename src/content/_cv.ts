@@ -95,8 +95,8 @@ export const info = {
       company: "Arin Innovation",
       url: "https://www.arin-innovation.com/en/",
       title: "Software Developer",
-      startDate: "Feb 2016",
-      endDate: "Feb 2018",
+      startDate: "Oct 2014",
+      endDate: "Feb 2016",
       description: [
         "Talk with clients to get the requirements and develop.",
         "First I was contracted for one year, when it finished they proposed me to extend the contract.",
