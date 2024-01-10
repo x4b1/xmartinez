@@ -5,12 +5,16 @@
       ":semanticCommits",
       ":semanticCommitTypeAll(chore)"
     ],
+    "timezone": "Europe/Madrid",
+    "schedule": [
+      "every weekend"
+    ],
     "packageRules": [
         {
             "matchPackagePatterns": ["*"],
-            "automerge": false
+            "automerge": true
         }
     ],
-    "reviewers": ["x4b1"],
-    "dependencyDashboard": false
+    "reviewers": ["xabi93"],
+    "dependencyDashboard": false,
 }
