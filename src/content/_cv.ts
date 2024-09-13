@@ -7,7 +7,8 @@ export const info = {
   github: "https://github.com/x4b1",
   linkedin: "https://www.linkedin.com/in/xmartinez",
   about: [
-    "Software engineer with devops mindset, mainly working with Go programming language, but doesn't discard the opportunity to work with other technologies. Big fan of KISS principle and don't reinventing the wheel."
+    "Software engineer with devops mindset and more than 10 years of experience, mainly working with Go programming language, but doesn't discard the opportunity to work with other technologies.",
+    "Big fan of KISS principle, don't reinventing the wheel and automatization lover."
   ],
   languages: ["Spanish", "English", "Basque"],
   experience: [
@@ -18,9 +19,9 @@ export const info = {
       startDate: "Oct 2023",
       endDate: "Present",
       description: [
-        "In charge of the enablement team, allowing new companies join to our platform.",
-        "Tasks definitions, helping team to deliver and coordination with product and other teams.",
-        "Getting rid of the legacy code.",
+        "In charge of the enablement team, allowing new clients join to our platform.",
+        "Tasks definitions, helping team to deliver and coordination with product and giving support to other teams of other areas.",
+        "Help with infrastructure tasks and help others."
       ],
       tags: ["Go", "Node.js", "PostgreSQL", "K8S", "AWS", "GPC", "Helm", "Terraform"]
     },
@@ -103,6 +104,19 @@ export const info = {
       ],
       tags: ["Oracle", "Oracle JD Edwards", "Oracle DB", "PS/SQL", "Oracle BI publisher"]
     },
+  ],
+  projects: [
+    {
+      title: "Messenger",
+      description: "A tiny Go library to easily publish/subscribe asynchronous messages with outbox pattern, supporting different message stores and brokers.",
+      link: "https://github.com/x4b1/messenger"
+    },
+    {
+      title: "Go Coverage Report",
+      description: `Command line application that parses golang coverage output and outputs a pretty report, supporting different types of outputs.\n
+      Mainly used to publish the report in github PRs checks to avoid paying third party tools.`,
+      link: "https://github.com/x4b1/go-coverage-report"
+    }
   ],
   education: [
     {
