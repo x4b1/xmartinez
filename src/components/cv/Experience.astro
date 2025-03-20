@@ -20,11 +20,11 @@ const { experience, website } = Astro.props;
 
 <section class="h-full grow flex flex-col overflow-hidden">
   <h2 class="font-extrabold text-lg mb-2">Work Experience</h2>
-  <div class="flex flex-col flex-wrap gap-y-2">
+  <div class="flex flex-col flex-wrap overflow-hidden gap-y-2">
     {
       experience.map((line) => {
         return (
-          <div class="overflow-hidden">
+          <div>
             <div class="flex justify-between mb-1">
               <h3 class="w-2/3">
                 <span class="font-bold">{line.title}</span>@
@@ -61,7 +61,7 @@ const { experience, website } = Astro.props;
       })
     }
   </div>
-  <div class="h-6 hidden print:block font-bold mb-4 text-center">
+  <div class="h-6 hidden print:block font-bold text-center">
     More details at <a class="text-slate-600" href={website}>{website}</a>
   </div>
 </section>

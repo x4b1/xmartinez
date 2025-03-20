@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@import '@fontsource-variable/roboto';
+
+
+@custom-variant print (@media print);
+
+@theme {
+  --font-display: 'Roboto Variable', sans-serif;
+}

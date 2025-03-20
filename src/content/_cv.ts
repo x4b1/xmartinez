@@ -7,8 +7,7 @@ export const info = {
   github: "https://github.com/x4b1",
   linkedin: "https://www.linkedin.com/in/xmartinez",
   about: [
-    "Software engineer with devops mindset and more than 10 years of experience, mainly working with Go programming language, but doesn't discard the opportunity to work with other technologies.",
-    "Big fan of KISS principle, don't reinventing the wheel and automatization lover."
+    "Software engineer with a DevOps mindset and 10+ years of experience, specializing in Go programming but open to exploring other technologies. Adept at backend development, infrastructure automation, and CI/CD improvements. Passionate about the KISS principle and avoiding unnecessary reinvention."
   ],
   languages: ["Spanish", "English", "Basque"],
   experience: [
@@ -19,9 +18,9 @@ export const info = {
       startDate: "Oct 2023",
       endDate: "Present",
       description: [
-        "In charge of the enablement team, allowing new clients join to our platform.",
-        "Tasks definitions, helping team to deliver and coordination with product and giving support to other teams of other areas.",
-        "Help with infrastructure tasks and help others."
+        "Leading the Enablement team to streamline the onboarding process for new companies on the platform.",
+        "Defining tasks, guiding the team, and ensuring seamless coordination with product and other teams.",
+        "Refactoring and modernizing legacy code to improve maintainability and performance."
       ],
       tags: ["Go", "Node.js", "PostgreSQL", "K8S", "AWS", "GPC", "Helm", "Terraform"]
     },
@@ -32,10 +31,10 @@ export const info = {
       startDate: "Jul 2021",
       endDate: "Oct 2023",
       description: [
-        "Build services in GoLang, such as, AuthN/AuthZ, financial services and libs.",
-        "Moving forward to IaC and GitOps, Costs reductions.",
-        "Improved CI/CD, migrate from Jenkins to GH actions. Standardize deployment, defining widely use workflows and Helm charts.",
-        "Help other developers in the day by day.",
+        "Developed core services in Go, including AuthN/AuthZ and financial transaction management.",
+        "Drove Infrastructure as Code (IaC) and GitOps adoption, leading to improved operational efficiency.",
+        "Optimized CI/CD pipelines by migrating from Jenkins to GitHub Actions, standardizing deployments with Helm charts.",
+        "Provided technical mentorship and support to developers, improving team productivity."
       ],
       tags: ["Go", "Node.js", "PostgreSQL", "K8S", "AWS", "GPC", "Helm", "Terraform"]
     },
@@ -46,10 +45,10 @@ export const info = {
       startDate: "Jul 2020",
       endDate: "Jul 2021",
       description: [
-        "Worked on different backend services in Go, exposing graphql API for frontend.",
-        "Internal service communication via gRPC and asynchronously using Pub/Sub.",
-        "Integrating with third parties such as Twillio, Google and auth0.",
-        "CI/CD using GitHub actions and deploying to kubernetes.",
+        "Built and maintained backend services in Go, exposing GraphQL APIs for frontend integration.",
+        "Implemented gRPC-based inter-service communication and event-driven architecture using Pub/Sub.",
+        "Integrated third-party services (Twilio, Auth0) to enhance platform capabilities.",
+        "Automated deployments with GitHub Actions and Kubernetes.",
       ],
       tags: ["Go", "GCP", "GraphQL", "PostgreSQL", "RabbitMQ"]
     },
@@ -60,9 +59,9 @@ export const info = {
       startDate: "Nov 2018",
       endDate: "Jul 2020",
       description: [
-        "Definition and implementation of a service (front and back-end) to handle onboarding of the new customers, with different flows and external integrations.",
-        "Worked on developments around financial data, such as, invoice importing from third parties or financial transactions management.",
-        "Setup deployments, pubsub queues, and other infrastructure stuff.",
+        "Designed and implemented a full-stack onboarding service with external integrations.",
+        "Developed financial data services, including invoice importing and transaction management.",
+        "Managed deployments, message queues, and infrastructure components."
       ],
       tags: ["Go", "Node.js", "TypeScript", "Vue.js", "PostgreSQL", "Docker", "AWS", "GPC"]
     },
@@ -73,9 +72,9 @@ export const info = {
       startDate: "Feb 2018",
       endDate: "Nov 2018",
       description: [
-        "Created from scratch a new managing tool for sales team.",
-        "Build a service to handle automatically rejections from distributors when a customer wants to join.",
-        "Move legacy code to a new service cleaning the code and adding tests, also fix many bugs on legacy code.",
+        "Designed and implemented a custom internal tool to optimize sales team workflows, improving efficiency and reducing manual work.",
+        "Developed an automated system to manage distributor onboarding rejections, ensuring a smoother and more efficient process.",
+        "Revamped legacy codebases by refactoring and enhancing test coverage, leading to better maintainability and reduced technical debt.",
       ],
       tags: ["PHP", "Symfony", "Laravel", "Vue.js", "Angular", "PostgreSQL", "MySQL", "AWS"]
     },
@@ -86,9 +85,9 @@ export const info = {
       startDate: "Feb 2016",
       endDate: "Feb 2018",
       description: [
-        "Involved in the development of a massive content importer from different sources, such as, Web (crawling), REST APIs, Zendesk, Salesforce and other third APIs to import contents to the company platform, allowing the client configure it selfs.",
-        "Managed projects related to chat-bots, NLP search and ticketing. Talking with clients to analyse the needs and viability.",
-        "Developed functionalities for customer adapting company product to each them.",
+        "Engineered a large-scale content importer integrating web crawling, REST APIs, and third-party services (Zendesk, Salesforce).",
+        "Led chatbot and NLP-based search projects, collaborating with clients to refine solutions.",
+        "Customized company products to meet specific client needs."
       ],
       tags: ["PHP", "Vue.js", "jQuery", "MySQL"]
     },
@@ -108,13 +107,12 @@ export const info = {
   projects: [
     {
       title: "Messenger",
-      description: "A tiny Go library to easily publish/subscribe asynchronous messages with outbox pattern, supporting different message stores and brokers.",
+      description: "A tiny Go library to easily publish/subscribe asynchronous messages using the outbox pattern, supporting different message stores and brokers.",
       link: "https://github.com/x4b1/messenger"
     },
     {
       title: "Go Coverage Report",
-      description: `Command line application that parses golang coverage output and outputs a pretty report, supporting different types of outputs.\n
-      Mainly used to publish the report in github PRs checks to avoid paying third party tools.`,
+      description: `A command-line tool that parses Go coverage output and generates a detailed report, supporting multiple output formats. Mainly used for publishing reports in GitHub PR checks as an alternative to third-party tools.`,
       link: "https://github.com/x4b1/go-coverage-report"
     }
   ],

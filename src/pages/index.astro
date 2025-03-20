@@ -15,10 +15,10 @@ function cvFileName(name: string): string {
 
 <BaseLayout title={info.name}>
   <div
-    class="print:py-0 bg-indigo-50 print:block flex justify-center items-center"
+    class="grid min-h-screen place-items-center bg-indigo-50 print:min-h-0"
   >
     <main
-      class="w-a4 print:h-a4 m-0 shadow-md print:shadow-none text-xs bg-white"
+      class="print:h-[297mm] md:w-[210mm] m-0 md:m-4 print:m-0 shadow-md print:h-screen print:w-screen print:rounded-none print:shadow-none text-xs bg-white"
     >
       <div class="md:absolute fixed right-4 top-6">
         <Download href={cvFileName(info.name)} />
