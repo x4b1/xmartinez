@@ -1,5 +1,5 @@
 export const info = {
-  name:"Xabier Martinez",
+  name: "Xabier Martinez",
   jobDescription: "Software Engineer",
   location: "Basque Country, Spain",
   website: "https://xmartinez.dev",
@@ -7,36 +7,37 @@ export const info = {
   github: "https://github.com/x4b1",
   linkedin: "https://www.linkedin.com/in/xmartinez",
   about: [
-    "Software engineer with a DevOps mindset and 10+ years of experience, specializing in Go programming but open to exploring other technologies. Adept at backend development, infrastructure automation, and CI/CD improvements. Passionate about the KISS principle and avoiding unnecessary reinvention."
+    "Software engineer with a DevOps mindset and 10+ years of experience, specializing in Go programming but open to exploring other technologies. Adept at backend development, infrastructure automation, and CI/CD improvements. Passionate about the KISS principle and avoiding unnecessary reinvention.",
   ],
   languages: ["Spanish", "English", "Basque"],
   experience: [
     {
-      company: "Bankable",
+      company: "Bankable (Arex Markets)",
       url: "https://www.bnkbl.com/",
-      title: "Tech Lead",
-      startDate: "Oct 2023",
+      title: "Senior Software Engineer",
+      startDate: "Jul 2021",
       endDate: "Present",
       description: [
-        "Leading the Enablement team to streamline the onboarding process for new companies on the platform.",
-        "Defining tasks, guiding the team, and ensuring seamless coordination with product and other teams.",
-        "Refactoring and modernizing legacy code to improve maintainability and performance."
+        "Led development of core services including a multi-tenant AuthN/AuthZ platform in Go, reducing complexity and Auth0 costs via caching and automation.",
+        "Built a flexible onboarding system integrated with third parties, streamlining AML compliance, contracts.",
+        "Developed a pricing engine to compute product-specific fees, enabling accurate quoting and automated pricing within client-facing and internal workflows.",
+        "Built services to assess company eligibility by aggregating data from different sources, with override support for ops.",
+        "Automated anonymized data replication from production to different environments safer testing.",
+        "Standardized deployments with Helm and GitOps, migrated CI/CD to GitHub Actions to speed up delivery and reduce overhead.",
+        "Managed cloud infra and IAM via Terraform across AWS, GitHub, and Cloudflare",
+        "Acted as a mentor and platform advocate, driving dev experience improvements, and aligning engineering initiatives with other tech leads.",
       ],
-      tags: ["Go", "Node.js", "PostgreSQL", "K8S", "AWS", "GPC", "Helm", "Terraform"]
-    },
-    {
-      company: "Bankable (prev. Arex Markets)",
-      url: "https://www.bnkbl.com/",
-      title: "Platform Engineer",
-      startDate: "Jul 2021",
-      endDate: "Oct 2023",
-      description: [
-        "Developed core services in Go, including AuthN/AuthZ and financial transaction management.",
-        "Drove Infrastructure as Code (IaC) and GitOps adoption, leading to improved operational efficiency.",
-        "Optimized CI/CD pipelines by migrating from Jenkins to GitHub Actions, standardizing deployments with Helm charts.",
-        "Provided technical mentorship and support to developers, improving team productivity."
+      tags: [
+        "Go",
+        "PostgreSQL",
+        "Node.js",
+        "Vue.js",
+        "AWS",
+        "GCP",
+        "Helm",
+        "K8S",
+        "Terraform",
       ],
-      tags: ["Go", "Node.js", "PostgreSQL", "K8S", "AWS", "GPC", "Helm", "Terraform"]
     },
     {
       company: "Paack",
@@ -45,12 +46,11 @@ export const info = {
       startDate: "Jul 2020",
       endDate: "Jul 2021",
       description: [
-        "Built and maintained backend services in Go, exposing GraphQL APIs for frontend integration.",
-        "Implemented gRPC-based inter-service communication and event-driven architecture using Pub/Sub.",
+        "Developed and maintained Go services with GraphQL APIs, implementing gRPC communication and event-driven architecture using Pub/Sub.",
         "Integrated third-party services (Twilio, Auth0) to enhance platform capabilities.",
         "Automated deployments with GitHub Actions and Kubernetes.",
       ],
-      tags: ["Go", "GCP", "GraphQL", "PostgreSQL", "RabbitMQ"]
+      tags: ["Go", "GCP", "GraphQL", "PostgreSQL", "RabbitMQ"],
     },
     {
       company: "Arex Markets",
@@ -59,11 +59,20 @@ export const info = {
       startDate: "Nov 2018",
       endDate: "Jul 2020",
       description: [
-        "Designed and implemented a full-stack onboarding service with external integrations.",
-        "Developed financial data services, including invoice importing and transaction management.",
-        "Managed deployments, message queues, and infrastructure components."
+        "Built robust financial data services that automated invoice importing and transaction management, enabling real-time financial tracking and reducing manual processing errors.",
+        "Develop integrations with banks to process automatic payments, working closely with the operations team to streamline processes.",
+        "Migrate Node.js monolith to Go services, improving the maintainability and scalability of the platform.",
       ],
-      tags: ["Go", "Node.js", "TypeScript", "Vue.js", "PostgreSQL", "Docker", "AWS", "GPC"]
+      tags: [
+        "Go",
+        "Node.js",
+        "TypeScript",
+        "Vue.js",
+        "PostgreSQL",
+        "Docker",
+        "AWS",
+        "GPC",
+      ],
     },
     {
       company: "Holaluz",
@@ -76,7 +85,16 @@ export const info = {
         "Developed an automated system to manage distributor onboarding rejections, ensuring a smoother and more efficient process.",
         "Revamped legacy codebases by refactoring and enhancing test coverage, leading to better maintainability and reduced technical debt.",
       ],
-      tags: ["PHP", "Symfony", "Laravel", "Vue.js", "Angular", "PostgreSQL", "MySQL", "AWS"]
+      tags: [
+        "PHP",
+        "Symfony",
+        "Laravel",
+        "Vue.js",
+        "Angular",
+        "PostgreSQL",
+        "MySQL",
+        "AWS",
+      ],
     },
     {
       company: "Inbenta",
@@ -87,9 +105,9 @@ export const info = {
       description: [
         "Engineered a large-scale content importer integrating web crawling, REST APIs, and third-party services (Zendesk, Salesforce).",
         "Led chatbot and NLP-based search projects, collaborating with clients to refine solutions.",
-        "Customized company products to meet specific client needs."
+        "Customized company products to meet specific client needs.",
       ],
-      tags: ["PHP", "Vue.js", "jQuery", "MySQL"]
+      tags: ["PHP", "Vue.js", "jQuery", "MySQL"],
     },
     {
       company: "Arin Innovation",
@@ -101,20 +119,27 @@ export const info = {
         "Talk with clients to get the requirements and develop.",
         "First I was contracted for one year, when it finished they proposed me to extend the contract.",
       ],
-      tags: ["Oracle", "Oracle JD Edwards", "Oracle DB", "PS/SQL", "Oracle BI publisher"]
+      tags: [
+        "Oracle",
+        "Oracle JD Edwards",
+        "Oracle DB",
+        "PS/SQL",
+        "Oracle BI publisher",
+      ],
     },
   ],
   projects: [
     {
       title: "Messenger",
-      description: "A tiny Go library to easily publish/subscribe asynchronous messages using the outbox pattern, supporting different message stores and brokers.",
-      link: "https://github.com/x4b1/messenger"
+      description:
+        "A tiny Go library to easily publish/subscribe asynchronous messages using the outbox pattern, supporting different message stores and brokers.",
+      link: "https://github.com/x4b1/messenger",
     },
     {
       title: "Go Coverage Report",
       description: `A command-line tool that parses Go coverage output and generates a detailed report, supporting multiple output formats. Mainly used for publishing reports in GitHub PR checks as an alternative to third-party tools.`,
-      link: "https://github.com/x4b1/go-coverage-report"
-    }
+      link: "https://github.com/x4b1/go-coverage-report",
+    },
   ],
   education: [
     {
@@ -122,6 +147,6 @@ export const info = {
       place: "University of the Basque Country",
       startDate: "Sep 2011",
       endDate: "Jul 2015",
-    }
+    },
   ],
-}
+};
