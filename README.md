@@ -1,55 +1,73 @@
-# Astro Starter Kit: Basics
+# Xabier Martinez - Personal Site & CV
+
+This repository contains the source code for the personal website and online CV of Xabier Martinez, a software engineer specializing in backend development, DevOps, and infrastructure automation. The site is built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/), and is designed to be fast, accessible, and easy to maintain.
+
+## 🌐 Live Site
+
+Visit the live site: [xmartinez.dev](https://xmartinez.dev)
+
+## 📄 Features
+
+- **Online CV**: Interactive, printable resume with work experience, education, and projects.
+- **PDF Download**: Generate and download a print-optimized PDF version of the CV.
+- **Responsive Design**: Works seamlessly on desktop and mobile devices.
+- **Accessible & Semantic**: Uses semantic HTML and accessibility best practices.
+- **Modern Stack**: Built with Astro, Tailwind CSS, TypeScript, and Playwright for PDF automation.
+
+## �️ Project Structure
 
 ```
-npm create astro@latest -- --template basics
-```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
-
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-│   └── favicon.svg
+/         # Project root
+├── public/         # Static assets (images, icons, PDF)
+├── scripts/        # Automation scripts (PDF generation)
 ├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/ # Astro components (CV sections, Download button)
+│   ├── content/    # CV data (TypeScript)
+│   ├── layouts/    # Base layout
+│   ├── pages/      # Main page
+│   └── styles/     # Global styles (Tailwind)
+├── package.json    # Project metadata & scripts
+├── astro.config.mjs# Astro configuration
+└── tsconfig.json   # TypeScript configuration
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🚀 Getting Started
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+2. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+3. **Build for production**:
+   ```bash
+   npm run build
+   ```
+4. **Generate PDF CV**:
+   ```bash
+   npm run generate-pdf
+   ```
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 🧑‍💻 Technologies Used
 
-## 🧞 Commands
+- Astro
+- Tailwind CSS
+- TypeScript
+- Playwright (for PDF generation)
 
-All commands are run from the root of the project, from a terminal:
+## 🤝 Contributing
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:3000`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+This is a personal project, but suggestions and improvements are welcome! Feel free to open an issue or pull request.
 
-## 👀 Want to learn more?
+## � Contact
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Website: [xmartinez.dev](https://xmartinez.dev)
+- Email: xmartinez1702@gmail.com
+- LinkedIn: [linkedin.com/in/xmartinez](https://www.linkedin.com/in/xmartinez)
+- GitHub: [github.com/x4b1](https://github.com/x4b1)
+
+---
+
+> Built and maintained by Xabier Martinez. Powered by Astro & Tailwind CSS.

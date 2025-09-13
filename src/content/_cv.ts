@@ -12,11 +12,33 @@ export const info = {
   languages: ["Spanish", "English", "Basque"],
   experience: [
     {
+      company: "Sword Health",
+      url: "https://swordhealth.com/",
+      title: "Senior Software Engineer",
+      startDate: "Jul 2025",
+      endDate: "Present",
+      description: [
+        "Built and extended AI agent capabilities to enhance digital health solutions.",
+        "Developed backend services to store and track user activities and manage patient prescriptions securely.",
+        "Implemented OAuth integrations to support authentication and external system connectivity.",
+      ],
+      tags: [
+        "Go",
+        "PostgreSQL",
+        "Node.js",
+        "Vue.js",
+        "GCP",
+        "Helm",
+        "K8S",
+        "Terraform",
+      ],
+    },
+    {
       company: "Bankable (Arex Markets)",
       url: "https://www.bnkbl.com/",
       title: "Senior Software Engineer",
       startDate: "Jul 2021",
-      endDate: "Present",
+      endDate: "Jul 2025",
       description: [
         "Led development of core services including a multi-tenant AuthN/AuthZ platform in Go, reducing complexity and Auth0 costs via caching and automation.",
         "Built a flexible onboarding system integrated with third parties, streamlining AML compliance, contracts.",

@@ -1,20 +1,18 @@
 {
-    "extends": [
-      "config:base",
-      "group:all",
-      ":semanticCommits",
-      ":semanticCommitTypeAll(chore)"
-    ],
-    "timezone": "Europe/Madrid",
-    "schedule": [
-      "every weekend"
-    ],
-    "packageRules": [
-        {
-            "matchPackagePatterns": ["*"],
-            "automerge": true
-        }
-    ],
-    "reviewers": ["x4b1"],
-    "dependencyDashboard": false
+  "extends": [
+    "config:base",
+    "group:all",
+    ":semanticCommits",
+    ":semanticCommitTypeAll(chore)"
+  ],
+  "timezone": "Europe/Madrid",
+  "schedule": ["every weekend"],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["*"],
+      "automerge": true
+    }
+  ],
+  "reviewers": ["x4b1"],
+  "dependencyDashboard": false
 }

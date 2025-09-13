@@ -12,8 +12,8 @@ type Project = {
 const { projects } = Astro.props;
 ---
 
-<section >
-  <h2 class="font-extrabold text-lg mb-2">Projects</h2>
+<section>
+  <h2 class="mb-2 text-lg font-extrabold">Projects</h2>
   <div class="flex flex-col flex-wrap gap-y-2 overflow-hidden">
     {
       projects.map((project) => {
@@ -23,7 +23,12 @@ const { projects } = Astro.props;
               <span class="font-bold">{project.title}</span>
             </h3>
             <p class="mb-1">{project.description}</p>
-            <a class="text-slate-600" href={project.link}>
+            <a
+              class="text-slate-600"
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {project.link}
             </a>
           </div>

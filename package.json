@@ -1,5 +1,6 @@
 {
   "name": "xmartinez",
+  "description": "Personal site and CV for Xabier Martinez. Built with Astro and Tailwind.",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -10,7 +11,9 @@
     "generate-pdf:ci": "start-test preview http://localhost:4321 generate-pdf",
     "build": "astro check && tsc --noEmit && astro build && npm run generate-pdf:ci",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "prettier --check .",
+    "format": "prettier --write ."
   },
   "engines": {
     "node": ">=22.14.0"
@@ -22,7 +25,8 @@
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.10.2",
     "playwright": "^1.53.2",
-    "prettier": "^3.6.2",
+    "prettier": "3.6.2",
+    "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.13",
     "start-server-and-test": "^2.0.12",
     "tailwindcss": "^4.1.11",

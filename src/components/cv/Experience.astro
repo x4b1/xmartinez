@@ -17,21 +17,21 @@ type ExperienceLine = {
 const { experience, website } = Astro.props;
 ---
 
-<section class="h-full grow flex flex-col overflow-hidden">
-  <h2 class="font-extrabold text-lg mb-2">Work Experience</h2>
-  <div class="flex flex-col flex-wrap overflow-hidden gap-y-4">
+<section class="flex h-full grow flex-col overflow-hidden">
+  <h2 class="mb-2 text-lg font-extrabold">Work Experience</h2>
+  <div class="flex flex-col flex-wrap gap-y-4 overflow-hidden">
     {
       experience.map((line) => {
         return (
           <div>
-            <div class="flex justify-between mb-1">
+            <div class="mb-1 flex justify-between">
               <h3 class="w-2/3">
                 <span class="font-bold">{line.title}</span> @
                 <a class="text-slate-600" href={line.url}>
                   {line.company}
                 </a>
               </h3>
-              <span class="italic text-slate-600">
+              <span class="text-slate-600 italic">
                 {line.startDate} - {line.endDate}
               </span>
             </div>
@@ -39,11 +39,14 @@ const { experience, website } = Astro.props;
               {line.description.map((item) => (
                 <li class="flex space-x-2">
                   <svg
-                    class="flex-shrink-0 w-5 h-5 text-slate-600"
+                    class="h-5 w-5 flex-shrink-0 text-slate-600"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
+                    aria-label="Checkmark"
+                    role="img"
                   >
+                    <title>Checkmark</title>
                     <path
                       fill-rule="evenodd"
                       d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -60,7 +63,7 @@ const { experience, website } = Astro.props;
       })
     }
   </div>
-  <div class="h-6 hidden print:block font-bold text-center">
+  <div class="hidden h-6 text-center font-bold print:block">
     More experience at <a class="text-slate-600" href={website}>{website}</a>
   </div>
 </section>
