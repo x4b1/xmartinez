@@ -1,36 +1,39 @@
 {
   "name": "xmartinez",
-  "description": "Personal site and CV for Xabier Martinez. Built with Astro and Tailwind.",
-  "type": "module",
   "version": "0.0.1",
   "private": true,
+  "description": "Personal site and CV for Xabier Martinez. Built with Astro and Tailwind.",
+  "type": "module",
   "scripts": {
+    "astro": "astro",
+    "build": "astro check && tsc --noEmit && astro build && npm run generate-pdf:ci",
+    "deploy": "npm run build && wrangler deploy",
     "dev": "astro dev",
-    "start": "astro dev",
+    "format": "prettier --write .",
     "generate-pdf": "node ./scripts/generate-pdf.js",
     "generate-pdf:ci": "start-test preview http://localhost:4321 generate-pdf",
-    "build": "astro check && tsc --noEmit && astro build && npm run generate-pdf:ci",
-    "preview": "astro preview",
-    "astro": "astro",
     "lint": "prettier --check .",
-    "format": "prettier --write ."
-  },
-  "engines": {
-    "node": ">=22.14.0"
+    "ncu": "ncu -u",
+    "preview": "astro preview",
+    "start": "astro dev"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
-    "@fontsource-variable/roboto": "^5.2.6",
+    "@fontsource-variable/roboto": "^5.2.7",
     "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.1.11",
-    "astro": "^5.10.2",
-    "playwright": "^1.53.2",
+    "@tailwindcss/vite": "^4.1.13",
+    "astro": "^5.13.7",
+    "npm-check-updates": "^18.1.1",
+    "playwright": "^1.55.0",
     "prettier": "3.6.2",
     "prettier-plugin-astro": "0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.13",
-    "start-server-and-test": "^2.0.12",
-    "tailwindcss": "^4.1.11",
-    "typescript": "^5.8.3",
-    "wrangler": "^4.22.0"
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "start-server-and-test": "^2.1.1",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2",
+    "wrangler": "^4.37.1"
+  },
+  "engines": {
+    "node": ">=22.14.0"
   }
 }
