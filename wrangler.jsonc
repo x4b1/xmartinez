@@ -2,8 +2,11 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "xmartinez",
   // Update to today's date
-  "compatibility_date": "2025-07-03",
+  "compatibility_date": "2025-10-06",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "assets": {
     "directory": "./dist",
-  },
+  }
 }
