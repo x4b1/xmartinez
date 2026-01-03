@@ -1,25 +1,18 @@
 ---
+import type { Experience, Labels } from "~/types/cv";
+
 type Props = {
-  experience: ExperienceLine[];
+  experience: Experience[];
   website: string;
+  labels: Labels;
 };
 
-type ExperienceLine = {
-  company: string;
-  url: string;
-  title: string;
-  startDate: string;
-  endDate: string;
-  description: string[];
-  tags: string[];
-};
-
-const { experience, website } = Astro.props;
+const { experience, website, labels } = Astro.props;
 ---
 
 <section class="flex h-full grow flex-col overflow-hidden">
-  <h2 class="mb-2 text-lg font-extrabold">Work Experience</h2>
-  <div class="flex flex-col flex-wrap gap-y-4 overflow-hidden">
+  <h2 class="mb-2 text-lg font-extrabold">{labels.workExperience}</h2>
+  <div class="flex flex-col gap-y-4 overflow-hidden">
     {
       experience.map((line) => {
         return (
@@ -27,7 +20,10 @@ const { experience, website } = Astro.props;
             <div class="mb-1 flex justify-between">
               <h3 class="w-2/3">
                 <span class="font-bold">{line.title}</span> @
-                <a class="text-slate-600" href={line.url}>
+                <a
+                  class="text-slate-600 underline-offset-2 hover:underline"
+                  href={line.url}
+                >
                   {line.company}
                 </a>
               </h3>
@@ -35,11 +31,11 @@ const { experience, website } = Astro.props;
                 {line.startDate} - {line.endDate}
               </span>
             </div>
-            <ul class="mb-1">
+            <ul class="mb-1 space-y-1">
               {line.description.map((item) => (
-                <li class="flex space-x-2">
+                <li class="flex gap-2">
                   <svg
-                    class="h-5 w-5 flex-shrink-0 text-slate-600"
+                    class="size-5 shrink-0 text-slate-600"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +59,10 @@ const { experience, website } = Astro.props;
       })
     }
   </div>
-  <div class="hidden h-6 text-center font-bold print:block">
-    More experience at <a class="text-slate-600" href={website}>{website}</a>
-  </div>
+  <footer class="hidden h-6 text-center font-bold print:block">
+    {labels.moreExperienceAt}
+    <a class="text-slate-600 underline-offset-2 hover:underline" href={website}
+      >{website}</a
+    >
+  </footer>
 </section>

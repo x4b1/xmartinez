@@ -1,4 +1,6 @@
 ---
+import type { Education, Labels } from "~/types/cv";
+
 type Props = {
   name: string;
   jobDescription: string;
@@ -9,6 +11,7 @@ type Props = {
   linkedin: string;
   education: Education[];
   languages: string[];
+  labels: Labels;
 };
 
 const {
@@ -21,14 +24,8 @@ const {
   linkedin,
   education,
   languages,
+  labels,
 } = Astro.props;
-
-type Education = {
-  title: string;
-  place: string;
-  startDate: string;
-  endDate: string;
-};
 
 type Detail = {
   key: string;
@@ -38,26 +35,26 @@ type Detail = {
 
 const details: Detail[] = [
   {
-    key: "Location",
+    key: labels.location,
     text: location,
   },
   {
-    key: "Email",
+    key: labels.email,
     text: email,
     link: `mailto:${email}`,
   },
   {
-    key: "Linkedin",
+    key: labels.linkedin,
     text: linkedin,
     link: linkedin,
   },
   {
-    key: "GitHub",
+    key: labels.github,
     text: github,
     link: github,
   },
   {
-    key: "Website",
+    key: labels.website,
     text: website,
     link: website,
   },
@@ -74,15 +71,15 @@ const details: Detail[] = [
     </h2>
   </div>
 
-  <dl class="flex flex-col justify-start space-y-2">
+  <dl class="flex flex-col space-y-2">
     {
       details.map((detail) => (
-        <div class="xs:w-1/2">
-          <dt class="mb-0 font-semibold">{detail.key}</dt>
+        <div>
+          <dt class="font-semibold">{detail.key}</dt>
           <dd>
             {detail.link ? (
               <a
-                class="font-normal"
+                class="font-normal underline-offset-2 hover:underline"
                 target="_blank"
                 href={detail.link}
                 rel="noopener noreferrer"
@@ -98,9 +95,9 @@ const details: Detail[] = [
     }
   </dl>
 
-  <hr class="my-4 h-px border-0 bg-gray-200" />
+  <hr class="my-4 border-0 border-t border-gray-200" />
 
-  <h2 class="mb-2 text-lg font-extrabold">Education</h2>
+  <h2 class="mb-2 text-lg font-extrabold">{labels.education}</h2>
   {
     education.map((ed) => (
       <>
@@ -112,11 +109,11 @@ const details: Detail[] = [
       </>
     ))
   }
-  <hr class="my-4 h-px border-0 bg-gray-200" />
+  <hr class="my-4 border-0 border-t border-gray-200" />
 
-  <h2 class="mb-2 text-lg font-extrabold">Languages</h2>
+  <h2 class="mb-2 text-lg font-extrabold">{labels.languages}</h2>
   <ul
-    class="flex flex-none list-inside list-none md:flex-col md:space-y-3 print:flex-col print:space-y-3"
+    class="flex list-none md:flex-col md:space-y-3 print:flex-col print:space-y-3"
   >
     {languages.map((s) => <li class="w-full">{s}</li>)}
   </ul>

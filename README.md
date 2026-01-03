@@ -1,73 +1,258 @@
-# Xabier Martinez - Personal Site & CV
+# Xabier Martinez - CV Website
 
-This repository contains the source code for the personal website and online CV of Xabier Martinez, a software engineer specializing in backend development, DevOps, and infrastructure automation. The site is built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/), and is designed to be fast, accessible, and easy to maintain.
+A modern, responsive CV website built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com). Features automatic PDF generation and deployment to Cloudflare Workers.
 
-## 🌐 Live Site
+🌐 **Live Site**: [xmartinez.dev](https://xmartinez.dev)
 
-Visit the live site: [xmartinez.dev](https://xmartinez.dev)
+## Features
 
-## 📄 Features
+- **Single Source of Truth**: All CV data managed in a single TypeScript file
+- **Automatic PDF Generation**: PDF created during build using Playwright
+- **Responsive Design**: Mobile-first design with print-optimized styles
+- **Type-Safe**: Full TypeScript support with strict type checking
+- **SEO Optimized**: Complete meta tags, Open Graph, and Twitter Card support
+- **Accessible**: WCAG compliant with semantic HTML and ARIA labels
+- **Edge Deployment**: Deployed to Cloudflare Workers for global distribution
+- **CI/CD**: Automated deployment on push to main branch
 
-- **Online CV**: Interactive, printable resume with work experience, education, and projects.
-- **PDF Download**: Generate and download a print-optimized PDF version of the CV.
-- **Responsive Design**: Works seamlessly on desktop and mobile devices.
-- **Accessible & Semantic**: Uses semantic HTML and accessibility best practices.
-- **Modern Stack**: Built with Astro, Tailwind CSS, TypeScript, and Playwright for PDF automation.
+## Tech Stack
 
-## �️ Project Structure
+- **Framework**: [Astro](https://astro.build) - Static site generator
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com) - Utility-first CSS
+- **Type Safety**: TypeScript with strict mode
+- **PDF Generation**: [Playwright](https://playwright.dev) - Browser automation
+- **Deployment**: [Cloudflare Workers](https://workers.cloudflare.com) - Edge computing
+- **CI/CD**: GitHub Actions with automated deployment
+- **Code Quality**: ESLint, Prettier, and TypeScript strict mode
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js >= 22.14.0
+- npm (comes with Node.js)
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/x4b1/xmartinez.git
+cd xmartinez
+
+# Install dependencies
+npm install
+```
+
+### Development
+
+```bash
+# Start development server
+npm run dev
+
+# Open http://localhost:4321 in your browser
+```
+
+### Building
+
+```bash
+# Type check, build site, and generate PDF
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production (includes type checking and PDF generation)
+- `npm run preview` - Preview production build locally
+- `npm run format` - Format code with Prettier
+- `npm run format:check` - Check code formatting
+- `npm run lint` - Lint code with ESLint
+- `npm run lint:fix` - Fix linting issues
+- `npm run type-check` - Run TypeScript type checking
+- `npm run validate` - Run all checks (format, lint, type-check)
+- `npm run generate-pdf` - Generate PDF from local server
+- `npm run deploy` - Build and deploy to Cloudflare
+
+## Project Structure
 
 ```
-/         # Project root
-├── public/         # Static assets (images, icons, PDF)
-├── scripts/        # Automation scripts (PDF generation)
+/
+├── .github/
+│   └── workflows/
+│       └── publish.yaml      # CI/CD deployment pipeline
+├── .vscode/                  # VS Code configuration
+│   ├── extensions.json       # Recommended extensions
+│   └── settings.json         # Editor settings
+├── public/                   # Static assets
+│   ├── xabier_martinez.pdf   # Generated CV PDF
+│   └── avatar.jpg            # Profile image
+├── scripts/
+│   └── generate-pdf.js       # PDF generation script
 ├── src/
-│   ├── components/ # Astro components (CV sections, Download button)
-│   ├── content/    # CV data (TypeScript)
-│   ├── layouts/    # Base layout
-│   ├── pages/      # Main page
-│   └── styles/     # Global styles (Tailwind)
-├── package.json    # Project metadata & scripts
-├── astro.config.mjs# Astro configuration
-└── tsconfig.json   # TypeScript configuration
+│   ├── components/
+│   │   ├── cv/               # CV-specific components
+│   │   │   ├── Experience.astro
+│   │   │   ├── Header.astro
+│   │   │   └── Projects.astro
+│   │   └── Download.astro
+│   ├── content/
+│   │   └── _cv.ts            # CV data (single source of truth)
+│   ├── layouts/
+│   │   └── BaseLayout.astro  # HTML layout with meta tags
+│   ├── pages/
+│   │   └── index.astro       # Main CV page
+│   ├── styles/
+│   │   └── global.css        # Global styles
+│   └── types/
+│       └── cv.ts             # TypeScript type definitions
+├── astro.config.mjs          # Astro configuration
+├── eslint.config.js          # ESLint configuration
+├── package.json              # Dependencies and scripts
+├── tsconfig.json             # TypeScript configuration
+└── wrangler.jsonc            # Cloudflare Workers config
 ```
 
-## 🚀 Getting Started
+## Updating Your CV
 
-1. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-2. **Start the development server**:
-   ```bash
-   npm run dev
-   ```
-3. **Build for production**:
-   ```bash
-   npm run build
-   ```
-4. **Generate PDF CV**:
-   ```bash
-   npm run generate-pdf
-   ```
+All CV content is managed in a single file: `src/content/_cv.ts`
 
-## 🧑‍💻 Technologies Used
+```typescript
+// src/content/_cv.ts
+export const info: CVInfo = {
+  name: "Your Name",
+  jobDescription: "Your Job Title",
+  // ... update your information here
+  experience: [
+    {
+      company: "Company Name",
+      title: "Your Title",
+      startDate: "Jan 2020",
+      endDate: "Present",
+      description: ["Achievement 1", "Achievement 2"],
+      tags: ["Go", "AWS", "PostgreSQL"],
+    },
+  ],
+  // ...
+};
+```
 
-- Astro
-- Tailwind CSS
-- TypeScript
-- Playwright (for PDF generation)
+After updating, run `npm run build` to rebuild the site and regenerate the PDF.
 
-## 🤝 Contributing
+## PDF Generation
 
-This is a personal project, but suggestions and improvements are welcome! Feel free to open an issue or pull request.
+The PDF is automatically generated during the build process using Playwright:
 
-## � Contact
+1. Build process starts the preview server
+2. Playwright navigates to the site in headless mode
+3. Page is prepared for printing (removes download button, adjusts styling)
+4. PDF is generated and saved to `public/xabier_martinez.pdf`
 
-- Website: [xmartinez.dev](https://xmartinez.dev)
-- Email: xmartinez1702@gmail.com
-- LinkedIn: [linkedin.com/in/xmartinez](https://www.linkedin.com/in/xmartinez)
-- GitHub: [github.com/x4b1](https://github.com/x4b1)
+### Print Preview (Development)
+
+You can preview how the PDF will look without generating it:
+
+1. Start the development server: `npm run dev`
+2. Navigate to `http://localhost:4321/print-preview`
+3. Or click the eye icon (👁️) in the top-right corner of the main page
+
+The print preview page shows exactly how the PDF will be generated, allowing you to:
+
+- See the exact A4 layout
+- Make adjustments to your CV content
+- Use browser print (Ctrl/Cmd + P) to save as PDF manually if needed
+
+### Manual PDF Generation
+
+```bash
+# Start preview server in one terminal
+npm run preview
+
+# Generate PDF in another terminal
+npm run generate-pdf
+```
+
+## Deployment
+
+The site is automatically deployed to Cloudflare Workers when changes are pushed to the `main` branch.
+
+### Manual Deployment
+
+```bash
+npm run deploy
+```
+
+### Environment Variables
+
+Required secrets for GitHub Actions:
+
+- `CLOUDFLARE_API_TOKEN` - Cloudflare API token with Workers deploy permissions
+- `CLOUDFLARE_ACCOUNT_ID` - Your Cloudflare account ID
+
+## Code Quality
+
+### Type Checking
+
+```bash
+npm run type-check
+```
+
+### Linting
+
+```bash
+npm run lint        # Check for issues
+npm run lint:fix    # Auto-fix issues
+```
+
+### Formatting
+
+```bash
+npm run format          # Format all files
+npm run format:check    # Check formatting
+```
+
+### Validation
+
+Run all checks before committing:
+
+```bash
+npm run validate
+```
+
+## Browser Support
+
+- Modern browsers (Chrome, Firefox, Safari, Edge)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+- Optimized for print (PDF generation)
+
+## Performance
+
+- Static site generation for fast loading
+- Edge deployment via Cloudflare Workers
+- Minimal JavaScript (Astro islands architecture)
+- Optimized fonts and assets
+
+## Accessibility
+
+- Semantic HTML structure
+- ARIA labels and roles
+- Keyboard navigation support
+- Screen reader optimized
+- WCAG 2.1 Level AA compliant
+
+## License
+
+MIT License - feel free to use this project as a template for your own CV website.
+
+## Acknowledgments
+
+- Built with [Astro](https://astro.build)
+- Styled with [Tailwind CSS](https://tailwindcss.com)
+- PDF generation powered by [Playwright](https://playwright.dev)
+- Deployed on [Cloudflare Workers](https://workers.cloudflare.com)
 
 ---
 
-> Built and maintained by Xabier Martinez. Powered by Astro & Tailwind CSS.
+**Questions or suggestions?** Open an issue or submit a pull request!

@@ -1,4 +1,6 @@
-export const info = {
+import type { CVInfo } from "~/types/cv";
+
+export const info: CVInfo = {
   name: "Xabier Martinez",
   jobDescription: "Software Engineer",
   location: "Basque Country, Spain",
@@ -18,9 +20,9 @@ export const info = {
       startDate: "Jul 2025",
       endDate: "Present",
       description: [
-        "Built and extended AI agent capabilities to enhance digital health solutions.",
-        "Developed backend services to store and track user activities and manage patient prescriptions securely.",
-        "Implemented OAuth integrations to support authentication and external system connectivity.",
+        "Designed and built an AI agent from scratch in collaboration with psychologists, translating clinical requirements into a practical, user-facing solution.",
+        "Developed and enhanced backend services with a focus on reliability and scalability, including high-ingestion data pipelines for health and other metrics.",
+        "Improved user acquisition and UX through OAuth authentication and third-party subscription integrations.",
       ],
       tags: [
         "Go",
@@ -171,4 +173,30 @@ export const info = {
       endDate: "Jul 2015",
     },
   ],
+  labels: {
+    location: "Location",
+    email: "Email",
+    linkedin: "Linkedin",
+    github: "GitHub",
+    website: "Website",
+    education: "Education",
+    languages: "Languages",
+    workExperience: "Work Experience",
+    projects: "Projects",
+    moreExperienceAt: "More experience at",
+    about: "About",
+    personalInformation: "Personal information",
+  },
+  seo: {
+    defaultDescription:
+      "Software Engineer with 10+ years of experience specializing in Go, backend development, and DevOps. Building scalable systems and cloud infrastructure.",
+    keywords:
+      "Software Engineer, Go, Golang, Backend, DevOps, Infrastructure, Kubernetes, AWS, GCP, PostgreSQL, TypeScript",
+    author: "Xabier Martinez",
+    themeColor: "#475569",
+  },
+  ui: {
+    downloadCV: "Download CV",
+    downloadIcon: "Download",
+  },
 };

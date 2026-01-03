@@ -1,28 +1,31 @@
 ---
+import type { UI } from "~/types/cv";
+
 type Props = {
   href: string;
+  ui: UI;
 };
 
-const { href } = Astro.props;
+const { href, ui } = Astro.props;
 ---
 
 <a
   download
-  class="text-slate-400 hover:text-slate-500"
+  class="text-slate-400 transition-colors hover:text-slate-500"
   href={href}
   rel="noopener noreferrer"
-  aria-label="Download CV"
+  aria-label={ui.downloadCV}
 >
   <svg
-    class="h-6 w-6"
+    class="size-6"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
-    aria-label="Download icon"
+    aria-label={ui.downloadIcon}
     role="img"
   >
-    <title>Download</title>
+    <title>{ui.downloadIcon}</title>
     <path
       stroke-linecap="round"
       stroke-linejoin="round"

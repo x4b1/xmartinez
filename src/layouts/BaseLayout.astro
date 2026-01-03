@@ -1,36 +1,61 @@
 ---
 import "~/styles/global.css";
+import type { SEO } from "~/types/cv";
 
 type Props = {
   title: string;
+  description?: string;
+  image?: string;
+  seo: SEO;
 };
 
-const { title } = Astro.props;
+const { title, description, image = "/avatar.jpg", seo } = Astro.props;
+
+const finalDescription = description || seo.defaultDescription;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImageURL = new URL(image, Astro.site);
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
+
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
     <title>{title}</title>
-    <meta name="title" content="Xabier Martinez" />
-    <meta
-      name="description"
-      content="Software Developer focused in Backend and Dev-Ops always willing to learn new things and looking for challenges"
-    />
-    <meta
-      name="keywords"
-      content="Software Developer, go, golang, js, javascript, backend, architecture, infrastructure"
-    />
+    <meta name="title" content={title} />
+    <meta name="description" content={finalDescription} />
+    <meta name="keywords" content={seo.keywords} />
     <meta name="robots" content="index, follow" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="language" content="English" />
+    <meta name="author" content={seo.author} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={finalDescription} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta property="og:site_name" content={seo.author} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={finalDescription} />
+    <meta property="twitter:image" content={socialImageURL} />
+
+    <!-- Additional SEO -->
+    <meta name="theme-color" content={seo.themeColor} />
   </head>
   <body>
     <slot />
