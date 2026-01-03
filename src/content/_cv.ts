@@ -1,4 +1,6 @@
-export const info = {
+import type { CVInfo } from "~/types/cv";
+
+export const info: CVInfo = {
   name: "Xabier Martinez",
   jobDescription: "Software Engineer",
   location: "Basque Country, Spain",
@@ -18,9 +20,9 @@ export const info = {
       startDate: "Jul 2025",
       endDate: "Present",
       description: [
-        "Built and extended AI agent capabilities to enhance digital health solutions.",
-        "Developed backend services to store and track user activities and manage patient prescriptions securely.",
-        "Implemented OAuth integrations to support authentication and external system connectivity.",
+        "Built AI agent for mental health assessments with clinical psychology team using LangGraph and Node.js",
+        "Developed data pipelines ingesting for health and other metrics.",
+        "Added OAuth authentication and payment provider integrations",
       ],
       tags: [
         "Go",
@@ -40,14 +42,14 @@ export const info = {
       startDate: "Jul 2021",
       endDate: "Jul 2025",
       description: [
-        "Led development of core services including a multi-tenant AuthN/AuthZ platform in Go, reducing complexity and Auth0 costs via caching and automation.",
-        "Built a flexible onboarding system integrated with third parties, streamlining AML compliance, contracts.",
-        "Developed a pricing engine to compute product-specific fees, enabling accurate quoting and automated pricing within client-facing and internal workflows.",
-        "Built services to assess company eligibility by aggregating data from different sources, with override support for ops.",
-        "Automated anonymized data replication from production to different environments safer testing.",
-        "Standardized deployments with Helm and GitOps, migrated CI/CD to GitHub Actions to speed up delivery and reduce overhead.",
-        "Managed cloud infra and IAM via Terraform across AWS, GitHub, and Cloudflare",
-        "Acted as a mentor and platform advocate, driving dev experience improvements, and aligning engineering initiatives with other tech leads.",
+        "Built multi-tenant auth platform in Go with caching layer that reduced Auth0 costs",
+        "Created onboarding system integrating AML/KYC providers with override support for edge cases",
+        "Developed pricing engine for automated fee calculations and quotes",
+        "Built company eligibility service aggregating data from multiple sources",
+        "Automated prod data anonymization and replication to test environments",
+        "Migrated CI/CD to GitHub Actions, standardized deployments with Helm and GitOps",
+        "Managed cloud infrastructure across AWS, GCP, GitHub, and Cloudflare using Terraform",
+        "Mentored engineers and worked with tech leads on platform improvements",
       ],
       tags: [
         "Go",
@@ -68,9 +70,10 @@ export const info = {
       startDate: "Jul 2020",
       endDate: "Jul 2021",
       description: [
-        "Developed and maintained Go services with GraphQL APIs, implementing gRPC communication and event-driven architecture using Pub/Sub.",
-        "Integrated third-party services (Twilio, Auth0) to enhance platform capabilities.",
-        "Automated deployments with GitHub Actions and Kubernetes.",
+        "Built Go services with GraphQL APIs and gRPC for internal communication",
+        "Implemented event-driven architecture using Pub/Sub",
+        "Integrated Twilio for notifications and Auth0 for authentication",
+        "Set up automated deployments with GitHub Actions and K8s",
       ],
       tags: ["Go", "GCP", "GraphQL", "PostgreSQL", "RabbitMQ"],
     },
@@ -81,9 +84,9 @@ export const info = {
       startDate: "Nov 2018",
       endDate: "Jul 2020",
       description: [
-        "Built robust financial data services that automated invoice importing and transaction management, enabling real-time financial tracking and reducing manual processing errors.",
-        "Develop integrations with banks to process automatic payments, working closely with the operations team to streamline processes.",
-        "Migrate Node.js monolith to Go services, improving the maintainability and scalability of the platform.",
+        "Built services for automated invoice importing and transaction management",
+        "Implemented direct bank integrations for payment processing",
+        "Migrated Node.js monolith to Go microservices",
       ],
       tags: [
         "Go",
@@ -103,9 +106,9 @@ export const info = {
       startDate: "Feb 2018",
       endDate: "Nov 2018",
       description: [
-        "Designed and implemented a custom internal tool to optimize sales team workflows, improving efficiency and reducing manual work.",
-        "Developed an automated system to manage distributor onboarding rejections, ensuring a smoother and more efficient process.",
-        "Revamped legacy codebases by refactoring and enhancing test coverage, leading to better maintainability and reduced technical debt.",
+        "Built internal tool for sales team workflows",
+        "Automated distributor onboarding rejection process",
+        "Refactored legacy code and added test coverage",
       ],
       tags: [
         "PHP",
@@ -125,9 +128,9 @@ export const info = {
       startDate: "Feb 2016",
       endDate: "Feb 2018",
       description: [
-        "Engineered a large-scale content importer integrating web crawling, REST APIs, and third-party services (Zendesk, Salesforce).",
-        "Led chatbot and NLP-based search projects, collaborating with clients to refine solutions.",
-        "Customized company products to meet specific client needs.",
+        "Built content importer with web crawling and REST API integrations (Zendesk, Salesforce)",
+        "Worked on chatbot and NLP search features with clients",
+        "Customized platform for client-specific requirements",
       ],
       tags: ["PHP", "Vue.js", "jQuery", "MySQL"],
     },
@@ -138,8 +141,9 @@ export const info = {
       startDate: "Oct 2014",
       endDate: "Feb 2016",
       description: [
-        "Talk with clients to get the requirements and develop.",
-        "First I was contracted for one year, when it finished they proposed me to extend the contract.",
+        "Gathered requirements and built Oracle JD Edwards customizations",
+        "Created BI reports using Oracle BI Publisher",
+        "Extended one-year contract based on performance",
       ],
       tags: [
         "Oracle",
@@ -171,4 +175,30 @@ export const info = {
       endDate: "Jul 2015",
     },
   ],
+  labels: {
+    location: "Location",
+    email: "Email",
+    linkedin: "Linkedin",
+    github: "GitHub",
+    website: "Website",
+    education: "Education",
+    languages: "Languages",
+    workExperience: "Work Experience",
+    projects: "Projects",
+    moreExperienceAt: "More experience at",
+    about: "About",
+    personalInformation: "Personal information",
+  },
+  seo: {
+    defaultDescription:
+      "Software Engineer with 10+ years of experience specializing in Go, backend development, and DevOps. Building scalable systems and cloud infrastructure.",
+    keywords:
+      "Software Engineer, Go, Golang, Backend, DevOps, Infrastructure, Kubernetes, AWS, GCP, PostgreSQL, TypeScript",
+    author: "Xabier Martinez",
+    themeColor: "#475569",
+  },
+  ui: {
+    downloadCV: "Download CV",
+    downloadIcon: "Download",
+  },
 };
