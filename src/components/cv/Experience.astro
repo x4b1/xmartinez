@@ -10,9 +10,11 @@ type Props = {
 const { experience, website, labels } = Astro.props;
 ---
 
-<section class="flex h-full grow flex-col">
-  <h2 class="mb-2 text-lg font-extrabold">{labels.workExperience}</h2>
-  <div class="flex flex-col gap-y-4 print:h-full print:gap-2">
+<section class="flex flex-col">
+  <h2 class="mb-2 text-lg font-extrabold print:mb-0">
+    {labels.workExperience}
+  </h2>
+  <div class="flex flex-col gap-y-4 print:h-full">
     {
       experience.map((line, index) => {
         return (
@@ -64,10 +66,7 @@ const { experience, website, labels } = Astro.props;
   >
     <span
       >{labels.moreExperienceAt}
-      <a
-        class="text-slate-600 underline-offset-2 hover:underline"
-        href={website}>{website}</a
-      >
+      <a class="text-slate-600 hover:underline" href={website}>{website}</a>
     </span>
   </div>
 </section>

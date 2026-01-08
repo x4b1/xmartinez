@@ -10,7 +10,7 @@ const { projects, labels } = Astro.props;
 ---
 
 <section>
-  <h2 class="mb-2 text-lg font-extrabold">{labels.projects}</h2>
+  <h2 class="mb-2 text-lg font-extrabold print:mb-0">{labels.projects}</h2>
   <div class="flex flex-col gap-y-2 overflow-hidden">
     {
       projects.map((project) => {

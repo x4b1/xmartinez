@@ -9,7 +9,7 @@ export const info: CVInfo = {
   github: "https://github.com/x4b1",
   linkedin: "https://www.linkedin.com/in/xmartinez",
   about: [
-    "Software engineer with a DevOps mindset and 10+ years of experience, specializing in Go programming but open to exploring other technologies. Adept at backend development, infrastructure automation, and CI/CD improvements. Passionate about the KISS principle and avoiding unnecessary reinvention.",
+    "Software engineer with a DevOps mindset and 10+ years of experience, specializing in Go programming but open to exploring other technologies. Focused on backend development, infrastructure automation, and CI/CD improvements. Passionate about the KISS principle and avoiding unnecessary reinvention.",
   ],
   languages: ["Spanish", "English", "Basque"],
   experience: [
@@ -20,9 +20,9 @@ export const info: CVInfo = {
       startDate: "Jul 2025",
       endDate: "Present",
       description: [
-        "Built AI agent for mental health assessments with clinical psychology team using LangGraph and Node.js",
-        "Developed data pipelines ingesting for health and other metrics.",
-        "Added OAuth authentication and payment provider integrations",
+        "Built AI integrations for mental health assessments and health metrics data pipelines for clinical services",
+        "Developed chat service with real-time messaging, media sharing, and notifications",
+        "Integrated OAuth and payment gateways to streamline clinical workflows and improve user experience",
       ],
       tags: [
         "Go",
@@ -42,14 +42,10 @@ export const info: CVInfo = {
       startDate: "Jul 2021",
       endDate: "Jul 2025",
       description: [
-        "Built multi-tenant auth platform in Go with caching layer that reduced Auth0 costs",
-        "Created onboarding system integrating AML/KYC providers with override support for edge cases",
-        "Developed pricing engine for automated fee calculations and quotes",
-        "Built company eligibility service aggregating data from multiple sources",
-        "Automated prod data anonymization and replication to test environments",
-        "Migrated CI/CD to GitHub Actions, standardized deployments with Helm and GitOps",
-        "Managed cloud infrastructure across AWS, GCP, GitHub, and Cloudflare using Terraform",
-        "Mentored engineers and worked with tech leads on platform improvements",
+        "Built authentication service with Auth0 integration and custom authorization layer for platform-specific access control",
+        "Architected customer onboarding workflows integrating AML/KYC verification, pricing engine, and eligibility services",
+        "Modernized infrastructure by migrating CI/CD to GitHub Actions and managing multi-cloud deployments (AWS, GCP, Cloudflare) with Terraform",
+        "Mentored engineers and automated production data anonymization for test environments",
       ],
       tags: [
         "Go",
@@ -70,12 +66,10 @@ export const info: CVInfo = {
       startDate: "Jul 2020",
       endDate: "Jul 2021",
       description: [
-        "Built Go services with GraphQL APIs and gRPC for internal communication",
-        "Implemented event-driven architecture using Pub/Sub",
-        "Integrated Twilio for notifications and Auth0 for authentication",
-        "Set up automated deployments with GitHub Actions and K8s",
+        "Built event-driven microservices with GraphQL APIs and gRPC using Go and Pub/Sub",
+        "Integrated Twilio and Auth0, automated deployments with GitHub Actions and K8s",
       ],
-      tags: ["Go", "GCP", "GraphQL", "PostgreSQL", "RabbitMQ"],
+      tags: ["Go", "GCP", "GraphQL", "PostgreSQL"],
     },
     {
       company: "Arex Markets",
@@ -84,8 +78,7 @@ export const info: CVInfo = {
       startDate: "Nov 2018",
       endDate: "Jul 2020",
       description: [
-        "Built services for automated invoice importing and transaction management",
-        "Implemented direct bank integrations for payment processing",
+        "Built invoice automation, transaction management, and bank integrations",
         "Migrated Node.js monolith to Go microservices",
       ],
       tags: [
@@ -106,9 +99,8 @@ export const info: CVInfo = {
       startDate: "Feb 2018",
       endDate: "Nov 2018",
       description: [
-        "Built internal tool for sales team workflows",
-        "Automated distributor onboarding rejection process",
-        "Refactored legacy code and added test coverage",
+        "Built sales workflow tool and automated distributor onboarding",
+        "Refactored legacy code and improved test coverage",
       ],
       tags: [
         "PHP",
@@ -128,9 +120,8 @@ export const info: CVInfo = {
       startDate: "Feb 2016",
       endDate: "Feb 2018",
       description: [
-        "Built content importer with web crawling and REST API integrations (Zendesk, Salesforce)",
-        "Worked on chatbot and NLP search features with clients",
-        "Customized platform for client-specific requirements",
+        "Built content importer with web crawling and API integrations (Zendesk, Salesforce)",
+        "Developed chatbot and NLP search features, customized platform for clients",
       ],
       tags: ["PHP", "Vue.js", "jQuery", "MySQL"],
     },
@@ -141,9 +132,7 @@ export const info: CVInfo = {
       startDate: "Oct 2014",
       endDate: "Feb 2016",
       description: [
-        "Gathered requirements and built Oracle JD Edwards customizations",
-        "Created BI reports using Oracle BI Publisher",
-        "Extended one-year contract based on performance",
+        "Built Oracle JD Edwards customizations and BI reports",
       ],
       tags: [
         "Oracle",
@@ -160,12 +149,7 @@ export const info: CVInfo = {
       description:
         "A tiny Go library to easily publish/subscribe asynchronous messages using the outbox pattern, supporting different message stores and brokers.",
       link: "https://github.com/x4b1/messenger",
-    },
-    {
-      title: "Go Coverage Report",
-      description: `A command-line tool that parses Go coverage output and generates a detailed report, supporting multiple output formats. Mainly used for publishing reports in GitHub PR checks as an alternative to third-party tools.`,
-      link: "https://github.com/x4b1/go-coverage-report",
-    },
+    }
   ],
   education: [
     {

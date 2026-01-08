@@ -1,0 +1,63 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import Header from "../components/cv/Header.astro";
+import Experience from "../components/cv/Experience.astro";
+import Projects from "../components/cv/Projects.astro";
+import Download from "../components/cv/Download.astro";
+
+import { info } from "../content/_cv";
+
+function cvFileName(name: string): string {
+  return `/${name.toLowerCase().replaceAll(" ", "_")}.pdf`;
+}
+---
+
+<BaseLayout title={`${info.name} - ${info.jobDescription}`} seo={info.seo}>
+  <div
+    class="grid min-h-screen place-items-center bg-indigo-50 print:min-h-0 print:bg-white"
+  >
+    <main
+      class="m-0 bg-white text-xs shadow-md md:m-4 md:w-[210mm] print:m-0 print:h-[297mm] print:w-[210mm] print:overflow-hidden print:rounded-none print:text-sm print:shadow-none"
+    >
+      <div
+        class="fixed top-6 right-4 flex items-center gap-3 md:absolute print:hidden"
+      >
+        <Download href={cvFileName(info.name)} ui={info.ui} />
+      </div>
+      <div class="flex h-full flex-col md:flex-row print:flex-row">
+        <aside
+          class="md:w-1/3 print:w-1/3"
+          aria-label={info.labels.personalInformation}
+        >
+          <Header
+            education={info.education}
+            website={info.website}
+            email={info.email}
+            github={info.github}
+            jobDescription={info.jobDescription}
+            linkedin={info.linkedin}
+            location={info.location}
+            name={info.name}
+            languages={info.languages}
+            labels={info.labels}
+          />
+        </aside>
+        <div
+          class="flex flex-col content-around space-y-2 p-4 md:w-2/3 print:w-2/3 print:py-2"
+        >
+          <section aria-labelledby="about-heading">
+            <h2 id="about-heading" class="sr-only">{info.labels.about}</h2>
+            {info.about.map((about) => <p>{about}</p>)}
+          </section>
+          <Experience
+            experience={info.experience}
+            website={info.website}
+            labels={info.labels}
+          />
+          <Projects projects={info.projects} labels={info.labels} />
+        </div>
+      </div>
+    </main>
+  </div>
+</BaseLayout>

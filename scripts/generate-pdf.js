@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // Usage: node generate-pdf.js [url] [outputPath]
-const url = process.argv[2] || "http://localhost:4321/";
+const url = process.argv[2] || "http://localhost:4321/cv";
 const outputPath =
   process.argv[3] || resolve(__dirname, "../public/xabier_martinez.pdf");
 
