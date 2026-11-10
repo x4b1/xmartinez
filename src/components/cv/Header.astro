@@ -65,8 +65,8 @@ const details: Detail[] = [
 ];
 ---
 
-<section class="flex h-full flex-col bg-[#101a28] px-4 py-2 text-white print:px-[8mm] print:py-[9mm]">
-  <div class="mt-2 mb-4">
+<section class="flex h-full flex-col bg-[#101a28] px-4 py-4 text-white print:px-[9mm] print:py-[9mm]">
+  <div class="mb-4">
     <h1 class="text-2xl leading-none font-extrabold tracking-tight">{name}</h1>
     <p class="text-base">{jobDescription}</p>
   </div>
@@ -96,19 +96,22 @@ const details: Detail[] = [
   <hr class="my-4 border-0 border-t border-gray-200" />
 
   <h2 class="mb-2 text-lg font-extrabold">{labels.education}</h2>
-  {education.map((ed) => (
-    <>
-      <h3 class="font-bold">{ed.title}</h3>
-      <h4>{ed.place}</h4>
-      <span class="text-slate-300 italic">
-        {ed.startDate} - {ed.endDate}
-      </span>
-    </>
-  ))}
+  <div class="flex flex-col gap-y-2">
+    {education.map((ed) => (
+      <div>
+        <h3 class="font-bold">{ed.title}</h3>
+        <h4>{ed.place}</h4>
+        <span class="text-slate-300 italic">
+          {ed.startDate} - {ed.endDate}
+        </span>
+      </div>
+    ))}
+  </div>
+
   <hr class="my-4 border-0 border-t border-gray-200" />
 
   <h2 class="mb-2 text-lg font-extrabold">{labels.languages}</h2>
-  <ul class="flex list-none md:flex-col md:space-y-3 print:flex-col">
+  <ul class="flex list-none md:flex-col md:space-y-2 print:flex-col">
     {languages.map((s) => (
       <li class="w-full">{s}</li>
     ))}
@@ -117,18 +120,20 @@ const details: Detail[] = [
   <hr class="my-4 border-0 border-t border-gray-200" />
 
   <h2 class="mb-2 text-lg font-extrabold">{labels.projects}</h2>
-  {projects.map((p) => (
-    <div>
-      <h3 class="font-bold">{p.title}</h3>
-      <p class="mb-1 text-slate-300">{p.description}</p>
-      <a
-        class="underline-offset-2 hover:underline"
-        href={p.link}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {shorten(p.link)}
-      </a>
-    </div>
-  ))}
+  <div class="flex flex-col gap-y-2">
+    {projects.map((p) => (
+      <div>
+        <h3 class="font-bold">{p.title}</h3>
+        <p class="mb-1 text-slate-300">{p.description}</p>
+        <a
+          class="underline-offset-2 hover:underline"
+          href={p.link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {shorten(p.link)}
+        </a>
+      </div>
+    ))}
+  </div>
 </section>

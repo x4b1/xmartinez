@@ -137,6 +137,12 @@ export const info: CVInfo = {
   ],
   projects: [
     {
+      title: "Zenith",
+      description:
+        "Training-planning web app for sports clubs: coaches schedule structured sessions by group and athletes see the day's plan on their phone. In early access.",
+      link: "https://zenithtrain.com/en/",
+    },
+    {
       title: "Messenger",
       description:
         "A tiny Go library to easily publish/subscribe asynchronous messages using the outbox pattern, supporting different message stores and brokers.",
