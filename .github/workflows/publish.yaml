@@ -44,7 +44,7 @@ jobs:
         run: npx playwright install-deps chromium
 
       - name: Type check
-        run: npm run astro check && tsc --noEmit
+        run: npm run type-check
 
       - name: Build site
         run: npm run build

@@ -7,9 +7,16 @@ type Props = {
   description?: string;
   image?: string;
   seo: SEO;
+  noindex?: boolean;
 };
 
-const { title, description, image = "/avatar.jpg", seo } = Astro.props;
+const {
+  title,
+  description,
+  image = "/avatar.jpg",
+  seo,
+  noindex = false,
+} = Astro.props;
 
 const finalDescription = description || seo.defaultDescription;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -35,7 +42,10 @@ const socialImageURL = new URL(image, Astro.site);
     <meta name="title" content={title} />
     <meta name="description" content={finalDescription} />
     <meta name="keywords" content={seo.keywords} />
-    <meta name="robots" content="index, follow" />
+    <meta
+      name="robots"
+      content={noindex ? "noindex, nofollow" : "index, follow"}
+    />
     <meta name="author" content={seo.author} />
     <link rel="canonical" href={canonicalURL} />
 
@@ -57,7 +67,7 @@ const socialImageURL = new URL(image, Astro.site);
     <!-- Additional SEO -->
     <meta name="theme-color" content={seo.themeColor} />
   </head>
-  <body>
+  <body class="bg-paper text-ink">
     <slot />
   </body>
 </html>

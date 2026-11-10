@@ -92,18 +92,12 @@ npm run preview
 ├── scripts/
 │   └── generate-pdf.js       # PDF generation script
 ├── src/
-│   ├── components/
-│   │   ├── cv/               # CV-specific components
-│   │   │   ├── Experience.astro
-│   │   │   ├── Header.astro
-│   │   │   └── Projects.astro
-│   │   └── Download.astro
 │   ├── content/
 │   │   └── _cv.ts            # CV data (single source of truth)
 │   ├── layouts/
 │   │   └── BaseLayout.astro  # HTML layout with meta tags
 │   ├── pages/
-│   │   └── index.astro       # Main CV page
+│   │   └── index.astro       # The whole site (also the PDF source)
 │   ├── styles/
 │   │   └── global.css        # Global styles
 │   └── types/

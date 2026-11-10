@@ -1,5 +1,5 @@
 ---
-import type { Education, Labels } from "~/types/cv";
+import type { Education, Labels, Project } from "~/types/cv";
 
 type Props = {
   name: string;
@@ -11,6 +11,7 @@ type Props = {
   linkedin: string;
   education: Education[];
   languages: string[];
+  projects: Project[];
   labels: Labels;
 };
 
@@ -24,8 +25,11 @@ const {
   linkedin,
   education,
   languages,
+  projects,
   labels,
 } = Astro.props;
+
+const shorten = (url: string) => url.replace(/^https?:\/\/(www\.)?/, "");
 
 type Detail = {
   key: string;
@@ -45,26 +49,26 @@ const details: Detail[] = [
   },
   {
     key: labels.linkedin,
-    text: linkedin,
+    text: shorten(linkedin),
     link: linkedin,
   },
   {
     key: labels.github,
-    text: github,
+    text: shorten(github),
     link: github,
   },
   {
     key: labels.website,
-    text: website,
+    text: shorten(website),
     link: website,
   },
 ];
 ---
 
-<section class="flex h-full flex-col bg-slate-600 px-4 py-2 text-white">
+<section class="flex h-full flex-col bg-[#101a28] px-4 py-2 text-white print:px-[8mm] print:py-[9mm]">
   <div class="mt-2 mb-4">
     <h1 class="text-2xl leading-none font-extrabold tracking-tight">{name}</h1>
-    <h2 class="text-base">{jobDescription}</h2>
+    <p class="text-base">{jobDescription}</p>
   </div>
 
   <dl class="flex flex-col space-y-2">
@@ -109,4 +113,22 @@ const details: Detail[] = [
       <li class="w-full">{s}</li>
     ))}
   </ul>
+
+  <hr class="my-4 border-0 border-t border-gray-200" />
+
+  <h2 class="mb-2 text-lg font-extrabold">{labels.projects}</h2>
+  {projects.map((p) => (
+    <div>
+      <h3 class="font-bold">{p.title}</h3>
+      <p class="mb-1 text-slate-300">{p.description}</p>
+      <a
+        class="underline-offset-2 hover:underline"
+        href={p.link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {shorten(p.link)}
+      </a>
+    </div>
+  ))}
 </section>

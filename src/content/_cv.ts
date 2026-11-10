@@ -5,7 +5,7 @@ export const info: CVInfo = {
   jobDescription: "Software Engineer",
   location: "Basque Country, Spain",
   website: "https://xmartinez.dev",
-  email: "xmartinez1702@gmail.com",
+  email: "hello@xmartinez.dev",
   github: "https://github.com/x4b1",
   linkedin: "https://www.linkedin.com/in/xmartinez",
   about: [
@@ -36,7 +36,7 @@ export const info: CVInfo = {
       ],
     },
     {
-      company: "Bankable (Arex Markets)",
+      company: "Bankable (acquired Arex Markets)",
       url: "https://www.bnkbl.com/",
       title: "Senior Software Engineer",
       startDate: "Jul 2021",
@@ -89,7 +89,7 @@ export const info: CVInfo = {
         "PostgreSQL",
         "Docker",
         "AWS",
-        "GPC",
+        "GCP",
       ],
     },
     {
@@ -132,13 +132,7 @@ export const info: CVInfo = {
       startDate: "Oct 2014",
       endDate: "Feb 2016",
       description: ["Built Oracle JD Edwards customizations and BI reports"],
-      tags: [
-        "Oracle",
-        "Oracle JD Edwards",
-        "Oracle DB",
-        "PS/SQL",
-        "Oracle BI publisher",
-      ],
+      tags: ["Oracle JD Edwards", "Oracle DB", "PL/SQL", "Oracle BI Publisher"],
     },
   ],
   projects: [
@@ -160,7 +154,7 @@ export const info: CVInfo = {
   labels: {
     location: "Location",
     email: "Email",
-    linkedin: "Linkedin",
+    linkedin: "LinkedIn",
     github: "GitHub",
     website: "Website",
     education: "Education",
@@ -177,7 +171,7 @@ export const info: CVInfo = {
     keywords:
       "Software Engineer, Go, Golang, Backend, DevOps, Infrastructure, Kubernetes, AWS, GCP, PostgreSQL, TypeScript",
     author: "Xabier Martinez",
-    themeColor: "#475569",
+    themeColor: "#0a111b",
   },
   ui: {
     downloadCV: "Download CV",

@@ -1,14 +1,320 @@
 @import "tailwindcss";
-@import "@fontsource-variable/roboto";
+@import "@fontsource-variable/schibsted-grotesk";
 
-@layer base {
-  /* Enhanced focus-visible for better keyboard navigation */
-  *:focus-visible {
-    @apply outline-2 outline-offset-2 outline-indigo-600;
+@theme {
+  --font-sans: "Schibsted Grotesk Variable", system-ui, sans-serif;
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-mute: var(--mute);
+  --color-rule: var(--rule);
+  --color-proof: var(--proof);
+}
+
+:root {
+  color-scheme: light dark;
+  --paper: oklch(98.5% 0.004 250);
+  --ink: oklch(20% 0.012 260);
+  --mute: oklch(44% 0.012 260);
+  --rule: oklch(82% 0.01 260);
+  --proof: oklch(45% 0.19 262);
+  --wash: color-mix(in oklch, var(--proof) 11%, var(--paper));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: oklch(17% 0.012 260);
+    --ink: oklch(92% 0.006 260);
+    --mute: oklch(72% 0.01 260);
+    --rule: oklch(34% 0.012 260);
+    --proof: oklch(76% 0.13 255);
   }
 }
 
-/* PDF print optimizations - must stay outside @layer for specificity */
+@layer base {
+  html {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    scrollbar-color: var(--rule) var(--paper);
+    scrollbar-width: thin;
+  }
+  ::selection {
+    background: var(--proof);
+    color: var(--paper);
+  }
+  .home a {
+    color: var(--proof);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+  }
+  .home a:hover {
+    text-decoration-thickness: 2px;
+  }
+  *:focus-visible {
+    outline: 2px solid var(--proof);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+}
+
+/* ---- Home: dark, fixed identity column ---- */
+:root:has(.home) {
+  color-scheme: dark;
+  --paper: oklch(17.5% 0.025 255);
+  --ink: oklch(90% 0.012 250);
+  --mute: oklch(70% 0.02 250);
+  --rule: oklch(32% 0.025 255);
+  --proof: oklch(82% 0.12 215);
+}
+.home {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 5vw, 4rem);
+}
+@media (min-width: 64rem) {
+  .home {
+    grid-template-columns: 22rem minmax(0, 1fr);
+    column-gap: 5rem;
+  }
+  .home aside {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    height: 100dvh;
+    padding: 6rem 0;
+  }
+}
+.home aside {
+  display: flex;
+  flex-direction: column;
+  padding-top: 4rem;
+}
+.home h1 {
+  font-size: clamp(2.4rem, 5vw, 3rem);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+.home .role {
+  margin-top: 0.75rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.home .pitch {
+  margin-top: 1rem;
+  max-width: 20rem;
+  color: var(--mute);
+}
+.home nav.toc {
+  display: none;
+  margin-top: 4rem;
+}
+@media (min-width: 64rem) {
+  .home nav.toc {
+    display: block;
+  }
+}
+.home section {
+  scroll-margin-top: 3.5rem;
+}
+.toc a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mute);
+  text-decoration: none;
+}
+.toc a::before {
+  content: "";
+  width: 2rem;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.toc a:is(:hover, :focus-visible, [aria-current="true"]) {
+  color: var(--ink);
+}
+.toc a:is(:hover, :focus-visible, [aria-current="true"])::before {
+  width: 4rem;
+}
+.home .social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 64rem) {
+  .home .social {
+    margin-top: auto;
+  }
+}
+.home .social a {
+  padding-block: 0.7rem;
+  color: var(--mute);
+  text-decoration: none;
+  font-weight: 500;
+}
+.home .social a:hover {
+  color: var(--proof);
+}
+.home main {
+  padding: 3rem 0 6rem;
+}
+@media (min-width: 64rem) {
+  .home main {
+    padding: 6rem 0;
+  }
+}
+.home section + section {
+  margin-top: 3.5rem;
+}
+@media (min-width: 64rem) {
+  .home section + section {
+    margin-top: 5.5rem;
+  }
+}
+.home h2 {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin: 0 calc(-1 * clamp(1.25rem, 5vw, 4rem)) 1.5rem;
+  padding: 1rem clamp(1.25rem, 5vw, 4rem);
+  background: color-mix(in oklch, var(--paper) 88%, transparent);
+  backdrop-filter: blur(6px);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+@media (min-width: 64rem) {
+  .home h2 {
+    position: static;
+    margin: 0 0 1rem;
+    padding: 0;
+    background: none;
+    backdrop-filter: none;
+    color: var(--mute);
+  }
+}
+.home .about p + p {
+  margin-top: 1rem;
+}
+.home .about {
+  font-size: 1.05rem;
+  color: var(--mute);
+  max-width: 38rem;
+}
+.home .about b,
+.home .about strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.home ol.jobs {
+  list-style: none;
+}
+.job {
+  display: grid;
+  gap: 0.35rem 1.5rem;
+  padding: 1.1rem 0;
+  transition: opacity 0.2s;
+}
+@media (min-width: 40rem) {
+  .job {
+    grid-template-columns: 8.5rem 1fr;
+  }
+}
+.job .when {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mute);
+  padding-top: 0.3rem;
+}
+.job h3 {
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+.job h3 a {
+  padding-block: 0.25rem;
+  color: var(--ink);
+  text-decoration-color: var(--rule);
+  text-decoration-thickness: 1px;
+}
+.job h3 a:hover {
+  color: var(--proof);
+}
+.job ul {
+  margin-top: 0.6rem;
+  color: var(--mute);
+  font-size: 0.95rem;
+  list-style: none;
+}
+.job li + li {
+  margin-top: 0.4rem;
+}
+.job .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.9rem;
+  margin-top: 0.8rem;
+  list-style: none;
+  padding: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--proof);
+}
+.job .tags li {
+  margin: 0;
+}
+@media (hover: hover) {
+  .home ol.jobs:has(.job:hover) .job:not(:hover) {
+    opacity: 0.55;
+  }
+}
+.home .more {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-weight: 600;
+}
+.home .edu {
+  margin-top: 0.4rem;
+}
+.home .meta {
+  color: var(--mute);
+}
+.home .proj {
+  display: block;
+  padding: 1rem 0;
+  text-decoration: none;
+  color: var(--ink);
+}
+.home .proj h3 {
+  font-weight: 600;
+}
+.home .proj p {
+  color: var(--mute);
+  margin-top: 0.3rem;
+  max-width: 38rem;
+}
+.home .proj:hover h3,
+.home .proj:focus-visible h3 {
+  color: var(--proof);
+}
+
+/* PDF print optimizations (the one-page /cv). The home page prints light. */
 @media print {
   * {
     -webkit-print-color-adjust: exact;
@@ -27,5 +333,11 @@
   @page {
     size: A4;
     margin: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
   }
 }
