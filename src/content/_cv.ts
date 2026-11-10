@@ -131,9 +131,7 @@ export const info: CVInfo = {
       title: "Software Developer",
       startDate: "Oct 2014",
       endDate: "Feb 2016",
-      description: [
-        "Built Oracle JD Edwards customizations and BI reports",
-      ],
+      description: ["Built Oracle JD Edwards customizations and BI reports"],
       tags: [
         "Oracle",
         "Oracle JD Edwards",
@@ -149,7 +147,7 @@ export const info: CVInfo = {
       description:
         "A tiny Go library to easily publish/subscribe asynchronous messages using the outbox pattern, supporting different message stores and brokers.",
       link: "https://github.com/x4b1/messenger",
-    }
+    },
   ],
   education: [
     {

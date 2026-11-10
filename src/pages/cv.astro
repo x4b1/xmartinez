@@ -14,15 +14,9 @@ function cvFileName(name: string): string {
 ---
 
 <BaseLayout title={`${info.name} - ${info.jobDescription}`} seo={info.seo}>
-  <div
-    class="grid min-h-screen place-items-center bg-indigo-50 print:min-h-0 print:bg-white"
-  >
-    <main
-      class="m-0 bg-white text-xs shadow-md md:m-4 md:w-[210mm] print:m-0 print:h-[297mm] print:w-[210mm] print:overflow-hidden print:rounded-none print:text-sm print:shadow-none"
-    >
-      <div
-        class="fixed top-6 right-4 flex items-center gap-3 md:absolute print:hidden"
-      >
+  <div class="grid min-h-screen place-items-center bg-indigo-50 print:min-h-0 print:bg-white">
+    <main class="m-0 bg-white text-xs shadow-md md:m-4 md:w-[210mm] print:m-0 print:h-[297mm] print:w-[210mm] print:overflow-hidden print:rounded-none print:text-sm print:shadow-none">
+      <div class="fixed top-6 right-4 flex items-center gap-3 md:absolute print:hidden">
         <Download href={cvFileName(info.name)} ui={info.ui} />
       </div>
       <div class="flex h-full flex-col md:flex-row print:flex-row">
@@ -43,12 +37,14 @@ function cvFileName(name: string): string {
             labels={info.labels}
           />
         </aside>
-        <div
-          class="flex flex-col content-around space-y-2 p-4 md:w-2/3 print:w-2/3 print:py-2"
-        >
+        <div class="flex flex-col content-around space-y-2 p-4 md:w-2/3 print:w-2/3 print:py-2">
           <section aria-labelledby="about-heading">
-            <h2 id="about-heading" class="sr-only">{info.labels.about}</h2>
-            {info.about.map((about) => <p>{about}</p>)}
+            <h2 id="about-heading" class="sr-only">
+              {info.labels.about}
+            </h2>
+            {info.about.map((about) => (
+              <p>{about}</p>
+            ))}
           </section>
           <Experience
             experience={info.experience}

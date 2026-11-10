@@ -15,58 +15,56 @@ const { experience, website, labels } = Astro.props;
     {labels.workExperience}
   </h2>
   <div class="flex flex-col gap-y-4 print:h-full">
-    {
-      experience.map((line, index) => {
-        return (
-          <div class:list={["block", { "print:hidden": index >= 5 }]}>
-            <div class="mb-1 flex justify-between">
-              <h3 class="w-2/3">
-                <span class="font-bold">{line.title}</span> @
-                <a
-                  class="text-slate-600 underline-offset-2 hover:underline"
-                  href={line.url}
-                >
-                  {line.company}
-                </a>
-              </h3>
-              <span class="text-slate-600 italic">
-                {line.startDate} - {line.endDate}
-              </span>
-            </div>
-            <ul class="mb-1 space-y-1">
-              {line.description.map((item) => (
-                <li class="flex gap-2 print:gap-0">
-                  <svg
-                    class="size-5 shrink-0 text-slate-600"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-label="Checkmark"
-                    role="img"
-                  >
-                    <title>Checkmark</title>
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <div class="text-slate-600">{line.tags.join(" | ")}</div>
+    {experience.map((line, index) => {
+      return (
+        <div class:list={["block", { "print:hidden": index >= 5 }]}>
+          <div class="mb-1 flex justify-between">
+            <h3 class="w-2/3">
+              <span class="font-bold">{line.title}</span> @
+              <a
+                class="text-slate-600 underline-offset-2 hover:underline"
+                href={line.url}
+              >
+                {line.company}
+              </a>
+            </h3>
+            <span class="text-slate-600 italic">
+              {line.startDate} - {line.endDate}
+            </span>
           </div>
-        );
-      })
-    }
+          <ul class="mb-1 space-y-1">
+            {line.description.map((item) => (
+              <li class="flex gap-2 print:gap-0">
+                <svg
+                  class="size-5 shrink-0 text-slate-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-label="Checkmark"
+                  role="img"
+                >
+                  <title>Checkmark</title>
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <div class="text-slate-600">{line.tags.join(" | ")}</div>
+        </div>
+      );
+    })}
   </div>
-  <div
-    class="mt-2 hidden text-center align-middle font-bold print:flex print:items-center print:justify-center"
-  >
-    <span
-      >{labels.moreExperienceAt}
-      <a class="text-slate-600 hover:underline" href={website}>{website}</a>
+  <div class="mt-2 hidden text-center align-middle font-bold print:flex print:items-center print:justify-center">
+    <span>
+      {labels.moreExperienceAt}
+      <a class="text-slate-600 hover:underline" href={website}>
+        {website}
+      </a>
     </span>
   </div>
 </section>
